@@ -1,0 +1,114 @@
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT CONFIGURATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .about-hero-container {
+    padding: 3rem 2rem 0 2rem;
+  }
+  
+  .about-meta-badge-row {
+    margin-bottom: 2.5rem;
+  }
+  
+  .about-hero-content {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN CORRECTIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .story-layout-section {
+    padding: 4.5rem 2rem;
+  }
+  
+  .story-inner-container {
+    gap: 2rem;
+  }
+  
+  .story-content-flow {
+    gap: 1.8rem;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE MODIFICATIONS (TRANSITION LAYER TO STACK ENGINE)
+   ========================================================================== */
+@media (max-width: 850px) {
+  .intentions-layout-container {
+    padding: 4rem 2rem;
+  }
+
+  /* Morphs component structures smoothly from side-by-side rows into stacked columns */
+  .intentions-flex-wrapper {
+    flex-direction: column;
+    gap: 4.5rem;             /* Enlarges structural separation gap on stacked devices */
+  }
+  
+  .intent-blockquote-tint {
+    padding: 3.5rem 2.5rem;  /* Compresses internal spatial safety cushions for thin displays */
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE MODIFICATIONS
+   ========================================================================== */
+@media (max-width: 968px) {
+  .model-grid-container {
+    grid-template-columns: 1fr; /* Collapses into a clean, uniform stack */
+    gap: 4.5rem;
+  }
+  
+  .model-intro-column {
+    position: static; /* Disables sticky anchor track smoothly for small screens */
+    gap: 1.5rem;
+  }
+  
+  .model-feature-card {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-feature-card {
+    flex-direction: column; /* Stacks the indicator badge over text for maximum space */
+    gap: 1.5rem;
+  }
+  
+  .model-card-decorator {
+    width: 2.4rem;
+    height: 4px;
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE MODIFICATIONS (CLEAN MOBILE DOWN-SCALING OVERRIDES)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .partners-deck-grid {
+    grid-template-columns: 1fr; /* Drops smoothly into a single-column sequence */
+    gap: 3.5rem;
+  }
+  
+  .partner-display-card {
+    min-height: auto; /* Relaxes hard structural limits for natural phone text heights */
+  }
+  
+  .partner-logo-hero-zone {
+    height: 18rem; /* Compresses frame footprint safely on smaller screen formats */
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-logo-hero-zone {
+    height: 15rem;
+  }
+  
+  .partner-glass-pane {
+    padding: 2.5rem;
+  }
+}

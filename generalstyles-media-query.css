@@ -1,0 +1,300 @@
+/* ==========================================================================
+   SITE STRUCTURE & GLOBAL NAVIGATION OVERRIDES (Below 1000px)
+   ========================================================================== */
+@media (max-width: 1000px) {
+  /* Hide desktop-specific elements safely */
+  .navigation, 
+  .header-actions {
+    display: none !important;
+  }
+
+  #mobile-navbar {
+    display: block;
+  }
+
+  /* Hamburger Menu Button Style Reset */
+  #menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    padding: 0.5rem;
+    outline: none;
+  }
+
+  /* Close (X) Icon Panel Position Reset */
+  #menu-close {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light); /* Pristine White */
+    padding: 0.5rem;
+    outline: none;
+  }
+
+  /* Base Mobile Drawer Panel */
+  #nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;           /* Sits hidden off-screen to the right by default */
+    width: 75%;              /* Takes up a clean 75% width of the mobile viewport */
+    height: 100vh;           /* Spans the complete device height */
+    background-color: var(--color-primary); /* Rich Dark Navy background surface */
+    padding: 10rem 4rem;
+    gap: 3.5rem;             /* Spacing between your interactive link elements */
+    z-index: 2000;           /* Floating layer height context */
+    transition: right 0.3s ease-in-out; /* Smooth sliding mechanic */
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;        /* Allows drawer content to scroll if link count overflows screen */
+  }
+
+  /* Interactive Sliding Trigger */
+  #nav-links.show {
+    right: 0;                /* Slides the drawer layout directly into the screen view */
+  }
+
+  /* Link & Inline SVG Layout Settings */
+  .mobile-nav-icon {
+    display: flex;
+    align-items: center;     /* Perfectly straight inline alignment for SVG + Text string */
+    gap: 1.8rem;             /* Spacing gap between your icon graphics and the text titles */
+    color: var(--text-light);/* Crisp White Link Text */
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    width: 100%;
+    transition: color 0.2s ease;
+  }
+
+  /* Color adjustments specifically targeting your inline Lucide SVGs */
+  .mobile-nav-icon svg {
+    color: var(--color-secondary); /* Vibrantly styled Light Blue tint */
+    flex-shrink: 0;
+  }
+
+  /* Active focus highlight configuration */
+  .mobile-nav-icon.active {
+    color: var(--color-secondary); /* Active links glow light blue */
+    font-weight: 700;
+  }
+
+  /* Remove desktop animated line effects completely inside the drawer view */
+  .nav-link::after {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   FOUNDER QUOTE UNIFIED CARD RESPONSIVE BREAKPOINT
+   ========================================================================== */
+@media (max-width: 900px) {
+  .founder-card-master {
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+  }
+
+  /* Adjusts the picture base structural layer height on smaller viewports */
+  .founder-photo-side {
+    width: 100%;
+    height: 550px;
+  }
+
+  /* Morphs the warm box layer directly into a full bottom glass overlay layer */
+  .founder-content-side {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    padding: 3.5rem;
+    border-radius: 0.8rem;
+    border-left: none !important; /* Removes structural border layout for absolute glass balance */
+    box-sizing: border-box;
+  }
+
+  .founder-blockquote {
+    font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 500px) {
+  .founder-photo-side {
+    height: 600px; /* Safety padding expansion for vertical wrapped mobile text rendering */
+  }
+
+  .founder-content-side {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* ==========================================================================
+   PROGRAMME GRID RESPONSIVE METRICS
+   ========================================================================== */
+@media (max-width: 850px) {
+  .programme-grid-container {
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .programme-overlay-box {
+    padding: 2.5rem;
+  }
+  
+  .programme-title {
+    font-size: 2rem;
+  }
+}
+
+/* ==========================================================================
+   STORY CARD SCROLL RESPONSIVE CONFIGURATIONS
+   ========================================================================== */
+@media (max-width: 500px) {
+  .story-blog-card {
+    flex: 0 0 31rem; /* Marginally shrinks card width footprint on small viewports */
+  }
+
+  .story-content-box {
+    padding: 2.5rem 2rem;
+  }
+  
+  .story-card-title {
+    font-size: 1.9rem;
+  }
+}
+
+/* ==========================================================================
+   NEWSLETTER CTA RESPONSIVE OVERRIDES
+   ========================================================================== */
+@media (max-width: 600px) {
+  .newsletter-section {
+    padding: 8rem 1.5rem;
+  }
+
+  /* Morphs inline components into a stacked layout structure safely */
+  .newsletter-form-group {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    gap: 1.5rem;
+  }
+
+  .newsletter-input {
+    width: 100%;
+    background-color: var(--bg-main);
+    border-radius: 0.8rem;
+    padding: 1.6rem 2rem;
+    border: 1px solid rgba(10, 17, 40, 0.08);
+    box-shadow: 0 4px 20px rgba(10, 17, 40, 0.03);
+  }
+
+  .newsletter-submit-btn {
+    width: 100%;
+    padding: 1.6rem;
+  }
+}
+
+/* ==========================================================================
+   PARTNERS LOGO BAR RESPONSIVE METRICS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .partners-logo-grid {
+    gap: 4rem 3rem; /* Tighter layout gap grid spacing when components wrap down */
+  }
+
+  .partner-logo-item {
+    width: 16rem;
+    height: 75px;
+    opacity: 0.85; /* Marginally higher base visibility for touch viewports */
+  }
+}
+
+@media (max-width: 400px) {
+  .partners-logo-grid {
+    gap: 3.5rem 2rem;
+  }
+
+  .partner-logo-item {
+    width: 13rem;
+    height: 60px;
+  }
+}
+
+/* ==========================================================================
+   UPDATED SYSTEM NEW FOOTER RESPONSI-METRICS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 6rem 2.5rem 3rem 2.5rem;
+    gap: 4.5rem;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4rem;
+  }
+
+  .footer-col {
+    flex: 1 1 auto;
+  }
+
+  .brand-info-col {
+    max-width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 3rem;
+  }
+
+  .newsletter-col {
+    max-width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 3rem;
+  }
+
+  /* Morphs the footer horizontal input row into a robust mobile form stack */
+  .newsletter-input-wrap {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 1.2rem;
+  }
+
+  .newsletter-input {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.6rem;
+    padding: 1.4rem 1.5rem;
+  }
+
+  .newsletter-button {
+    width: 100%;
+    padding: 1.4rem;
+  }
+
+  /* Bottom Row Realignment */
+  .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .legal-links-list {
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+  }
+}

@@ -1,0 +1,419 @@
+/* ==========================================================================
+   SECTION 1: HERO HEADER SYSTEM
+   ========================================================================= */
+
+.about-hero-container {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4rem 2rem 0 2rem;
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Meta Identification Ribbon */
+.about-meta-badge-row {
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+.meta-orange-badge {
+  display: inline-block;
+  background-color: #E06A28; /* High-visibility orange accent block from asset */
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  padding: 0.6rem 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Production Typography Layout */
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Page Primary Title Heading */
+.about-main-headline {
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  font-weight: 700;
+  color: var(--color-primary); /* Uses your main project Dark Navy variable */
+  margin: 0;
+  letter-spacing: -0.02rem;
+}
+
+/* Page Intro Sub-Headline Paragraph */
+.about-sub-headline {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(1.6rem, 2.2vw, 1.85rem);
+  color: var(--text-muted); /* Uses your project body/muted font color */
+  line-height: 1.6;
+  max-width: 92rem;
+  margin: 0;
+}
+
+/* Horizontal Layout Border Partition Line from image_2fc665.png */
+.about-hero-separator {
+  border: none;
+  height: 2px;
+  background-color: #E2E8F0; /* Soft, breathable structural divider rule */
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 2: OUR STORY SYSTEM
+   ========================================================================== */
+
+.story-layout-section {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  background-color: transparent;
+}
+
+.story-inner-container {
+  max-width: 85rem; /* Restricts reading length for a clean editorial feel */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Section Main Subheading */
+.story-section-title {
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-primary); /* Deep Navy */
+  margin: 0;
+  letter-spacing: -0.01rem;
+}
+
+/* Base Body Paragraph Styling */
+.story-content-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem; /* Creates balanced vertical rhythm between content blocks */
+}
+
+.story-text-para {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: var(--text-muted); /* Sophisticated dark charcoal grey text */
+  margin: 0;
+}
+
+/* Styled Opening Hook Hooked into Design Guide */
+.story-lead-paragraph {
+  font-size: 1.75rem;
+  line-height: 1.7;
+  color: #1E293B; /* Slightly crisper emphasis value for the hook line */
+}
+
+/* Distinctive Closing Manifesto Accent String */
+.story-closing-emphasis {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 1.65rem;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   SECTIONS 3 & 4: MISSION & VISION DUAL LAYER SYSTEM
+   ========================================================================== */
+
+.intentions-layout-container {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Flexbox Workspace managing the Side-by-Side Desktop view */
+.intentions-flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Forces matching heights regardless of text character lengths */
+  gap: 4rem;            /* Clean horizontal spatial distribution channel */
+  width: 100%;
+}
+
+/* Individual Content Segment Columns */
+.intent-card-block {
+  flex: 1;              /* Allocates equal 50/50 scaling distribution dynamically */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Local Component Structural Sub-Headings */
+.intent-section-title {
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-primary); /* Deep Structural Navy */
+  margin: 0;
+  letter-spacing: -0.01rem;
+}
+
+/* Warm-tinted Structural Blockquote Box from image_2fc665.png Layout */
+.intent-blockquote-tint {
+  background-color: #FEF7F2;  /* Signature cream/warm pastel layout block color tint */
+  border-left: 4px solid #E06A28; /* High-contrast orange structural bar identifier */
+  margin: 0;
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;               /* Spans fill boundary height context uniformly */
+  box-sizing: border-box;
+}
+
+/* Quote Graphic/Typography Style Layout */
+.intent-quote-text {
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.15rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.55;
+  color: #1E293B;            /* Deep graphite reading text string value */
+  margin: 0;
+}
+
+/* Attribution Signature Block */
+.intent-quote-footer {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: #E06A28;            /* Aligns footer sign-off hue code directly with brand accent */
+}
+
+/* ==========================================================================
+   SECTION 5: THE MSTP MODEL SYSTEM
+   ========================================================================== */
+
+.model-layout-section {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  font-family: var(--font-body), sans-serif;
+}
+
+/* 2-Column Asymmetric Asynchronous Grid Workspace */
+.model-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Left Anchor Entry Stream */
+.model-intro-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: sticky;
+  top: 4rem; /* Holds position comfortably on desktop scrolling paths */
+}
+
+.model-main-heading {
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-primary); /* Deep Structural Navy */
+  margin: 0;
+  letter-spacing: -0.01rem;
+}
+
+.model-description-lead {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Right Feature Card Flex column track */
+.model-features-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Individual Feature Block Component */
+.model-feature-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(10, 17, 40, 0.06);
+  box-shadow: 0 10px 30px rgba(10, 17, 40, 0.02);
+  border-radius: 1.2rem;
+  padding: 3.5rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(10, 17, 40, 0.05);
+  border-color: rgba(79, 195, 247, 0.2); /* Soft highlight on hover */
+}
+
+/* Microbrand indicator strip inside the card framework */
+.model-card-decorator {
+  width: 4px;
+  height: 2.4rem;
+  background-color: #E06A28; /* High-contrast orange anchor flag */
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+}
+
+.model-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.model-card-title {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.model-card-text {
+  font-size: 1.5rem;
+  line-height: 1.65;
+  color: #475569; /* Muted slate charcoal */
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 6: PARTNERSHIP CARDS & GLASS PANES SYSTEM
+   ========================================================================== */
+
+.partners-card-section {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem 12rem 2rem;
+  font-family: var(--font-body), sans-serif;
+}
+
+.partners-container-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.partners-grid-heading {
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: -0.01rem;
+}
+
+/* 2-Column Responsive Matrix Grid Layout */
+.partners-deck-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  width: 100%;
+}
+
+/* Base Card Architecture Container */
+.partner-display-card {
+  background-color: #F8FAFC; /* Clean off-white background canvas frame */
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 42rem; /* Guarantees a tall, premium structural presentation shape */
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.02);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.partner-display-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+}
+
+/* Large Hero Zone dedicated entirely to prominent Branding */
+.partner-logo-hero-zone {
+  width: 100%;
+  height: 22rem; /* Focuses design hierarchy immediately onto the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background-color: #FFFFFF; /* High-contrast white zone to float logos cleanly */
+  box-sizing: border-box;
+}
+
+.partner-hero-logo {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.85); /* Sophisticated aesthetic fallback on load */
+  transition: filter 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.partner-display-card:hover .partner-hero-logo {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.04);
+}
+
+/* Production-Grade High Performance Glassmorphism Pane Layer */
+.partner-glass-pane {
+  background: rgba(255, 255, 255, 0.65); /* Soft semi-transparent white frost */
+  backdrop-filter: blur(16px); /* Blurs image frames behind it dynamically */
+  -webkit-backdrop-filter: blur(16px); /* Safari support architecture hook */
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 3.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 2;
+}
+
+/* Alternating zebra card variant tints for structural visual interest */
+.partner-display-card:nth-child(even) .partner-glass-pane {
+  background: rgba(248, 250, 252, 0.7); /* Slightly cooler gray frost alternate tone */
+}
+
+.partner-pane-title {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.partner-pane-desc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
