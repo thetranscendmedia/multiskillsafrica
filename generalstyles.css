@@ -590,3 +590,31 @@ ol, ul, li {
     padding: 1.5rem;
   }
 }
+
+.page-hero {
+  background-color: var(--color-primary, #0A1128); /* Rich Dark Navy */
+  padding: 14rem 2rem 10rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content-inner {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.page-main-title {
+  font-family: var(--font-display, 'Lora', serif);
+  font-size: clamp(3.6rem, 5vw, 5.2rem);
+  color: var(--text-light, #ffffff);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1.6rem, 2.2vw, 1.9rem);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}

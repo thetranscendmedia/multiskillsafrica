@@ -1,0 +1,324 @@
+/* ==========================================================================
+   CONTACT PAGE CORE LAYOUT BOUNDS
+   ========================================================================== */
+.contact-page-wrapper {
+  background-color: var(--bg-main, #fcfcfd);
+  padding-bottom: 12rem;
+}
+
+/* --- Contact Core Split Layout Grid --- */
+.contact-grid-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  margin-top: -4rem; /* Overlaps hero seamlessly */
+  position: relative;
+  z-index: 10;
+}
+
+.contact-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   LEFT COLUMN PANEL: BRANDING INFO HOVER CARDS
+   ========================================================================== */
+.contact-info-panel {
+  background-color: var(--color-primary, #0A1128);
+  border-radius: 1.2rem;
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(10, 17, 40, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.panel-headline {
+  font-family: var(--font-display, 'Lora', serif);
+  font-size: 2.8rem;
+  color: var(--text-light, #ffffff);
+  margin-bottom: 1.5rem;
+}
+
+.panel-explanatory {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+.info-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 6rem;
+}
+
+.info-item-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info-icon-wrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-secondary, #00D2FF); /* Vibrant highlight blue */
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.info-item-card:hover .info-icon-wrapper {
+  background-color: var(--color-secondary, #00D2FF);
+  color: var(--color-primary, #0A1128);
+  transform: translateY(-3px);
+}
+
+.info-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.info-label {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.info-anchor-link, 
+.info-static-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.7rem;
+  color: var(--text-light, #ffffff);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.info-anchor-link:hover {
+  color: var(--color-secondary, #00D2FF);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN PANEL: PREMIUM HIGH-END INTERACTIVE FORM
+   ========================================================================== */
+.contact-form-panel {
+  background-color: #ffffff;
+  border-radius: 1.2rem;
+  padding: 5rem;
+  box-shadow: 0 20px 50px rgba(10, 17, 40, 0.04);
+  border: 1px solid rgba(10, 17, 40, 0.05);
+}
+
+.mstp-interactive-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.form-row-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.input-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.form-field-label {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-primary, #0A1128);
+  letter-spacing: -0.01rem;
+}
+
+.required-asterisk {
+  color: #ff3b30;
+  margin-left: 0.2rem;
+}
+
+/* --- Base Input Structural Model Styling --- */
+.form-interactive-input {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-primary, #0A1128);
+  background-color: #f8f9fa;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  border-radius: 0.6rem;
+  padding: 1.4rem 1.6rem;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-interactive-input:hover {
+  border-color: rgba(10, 17, 40, 0.2);
+  background-color: #f1f3f5;
+}
+
+/* High-End Focused Glow State Blueprint */
+.form-interactive-input:focus {
+  border-color: var(--color-primary, #0A1128);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(10, 17, 40, 0.05);
+}
+
+/* --- Special Dropdown Context Configuration --- */
+.select-custom-chevron-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.select-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 4rem;
+}
+
+/* Custom CSS Chevron positioning overlay layer */
+.select-custom-chevron-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1.8rem;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 0.6rem;
+  background-color: var(--color-primary, #0A1128);
+  clip-path: polygon(100% 0, 0 0, 50% 100%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* --- Textarea Sizing Specific Override Block --- */
+.dynamic-textarea {
+  resize: vertical;
+  min-height: 12rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   FORM ACTION ROW & INTERACTIVE SUBMIT MECHANIC
+   ========================================================================== */
+.submit-action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.form-submit-master-btn {
+  background-color: #FF6B35; /* Crisp Accent Orange */
+  color: #ffffff;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 1.5rem 3.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-submit-master-btn svg {
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Premium Visual Effect Trigger Shifts */
+.form-submit-master-btn:hover {
+  background-color: #e85a23;
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.3);
+  transform: translateY(-2px);
+}
+
+.form-submit-master-btn:hover svg {
+  transform: translateX(4px) scale(1.05);
+}
+
+.form-submit-master-btn:active {
+  transform: translateY(0);
+}
+
+
+
+/* ==========================================================================
+   CONTACT PAGE GRID RESPONSI-METRICS BREAKPOINT (Below 950px)
+   ========================================================================== */
+@media (max-width: 950px) {
+  .contact-hero {
+    padding: 12rem 2rem 12rem 2rem;
+  }
+
+  .contact-grid-container {
+    margin-top: -6rem;
+    padding: 0 2rem;
+  }
+
+  /* Morphs grid split layout directly into a unified single column stack */
+  .contact-split-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .contact-info-panel {
+    padding: 4rem;
+    gap: 4rem;
+  }
+
+  .info-details-list {
+    margin-top: 4rem;
+  }
+
+  .contact-form-panel {
+    padding: 4rem;
+  }
+}
+
+/* ==========================================================================
+   MOBILE INPUT FIELD SUB-RESPONSIVE CONFIGURATION (Below 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .contact-form-panel {
+    padding: 3.5rem 2rem;
+  }
+
+  .mstp-interactive-form {
+    gap: 2.5rem;
+  }
+
+  /* Splits horizontal form row pairs into fully dynamic vertical field tracks */
+  .form-row-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .form-submit-master-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.6rem;
+  }
+}

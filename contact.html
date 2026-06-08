@@ -1,63 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MSTP</title>
+    <link rel="stylesheet" href="generalstyles.css">
+    <link rel="stylesheet" href="generalstyles-media-query.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="/IMAGES/multiskillsafrica-fav.png" rel="icon">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <main>
-        <!-- Contact Page Hero Section -->
-        <section>
-            <h1>Get in Touch</h1>
-            <p>Whether you're a funder, partner, school, journalist, or simply want to know more we'd love to hear from you.</p>
+        <!-- 1. NAVIGATION HEADER (The Welcome Gate) -->
+<header id="main-header" class="site-header">
+    <div class="header-container">
+
+        <!-- Website Brand/Logo Area -->
+        <div class="brand">
+            <a href="index.html">
+                <img src="/IMAGES/multiskillsafrica-logo.png" alt="multilskillsafrica-logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Desktop Navigation Area -->
+        <nav id="main-nav" class="navigation" aria-label="Main Navigation">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about-us.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="ourprograms.html" class="nav-link">Our Programs</a></li>
+                <!-- <li class="nav-item"><a href="impact.html" class="nav-link">Our Impact</a></li>
+                <li class="nav-item"><a href="trainers.html" class="nav-link">Trainers Module</a></li> -->
+                <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">News & Blog</a></li>
+                <!-- <li class="nav-item"><a href="partner.html" class="nav-link">Official Partners</a></li> -->
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Desktop Action Button Section -->
+        <div class="header-actions">
+            <a href="support.html" class="nav-cta">Support MSTP</a>
+        </div>
+
+        <!-- MOBILE NAVIGATION TRACK ENGINE -->   
+        <nav id="mobile-navbar" aria-label="Mobile Navigation">
+            <!-- Toggle Button (Always visible on mobile viewports) -->
+            <button id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="nav-links">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+            </button>
+
+            <!-- Navigation Links Container (The Sliding Drawer) -->
+            <div id="nav-links">
+                <!-- Close Button inside the sliding drawer -->
+                <button id="menu-close" aria-label="Close Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+
+                <!-- Active Navigation Links -->
+                <a href="index.html" class="mobile-nav-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a>
+                <a href="aboutus.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>About</a>
+                <a href="contact.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Contacts</a>
+                
+                <!-- Commented links kept safely under mobile naming conventions -->
+                <a href="impact.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Our Impact</a>
+                <a href="trainers.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M9 21h6"/><path d="M8 11l3-3 3 3"/></svg>Trainers Module</a>
+                <a href="helpcenter.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-helping"><path d="M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14"/><path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 13 6 6"/></svg>Help Center</a>
+                <a href="team.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round"><path d="M18 21a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/></svg>Our Team</a>
+                <a href="partner.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4l-11.6-11.6a2.1 2.1 0 0 0-3 3l3.8 3.8"/><path d="m14 14 2.5 2.5a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4L11 2"/><path d="M17 11V7a1 1 0 0 0-1-1h-4"/><path d="M10 11H6a1 1 0 0 1-1-1V6"/></svg>Official Partners</a>
+
+                <!-- Core Support Link Panel Trigger -->
+                <a href="support.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>Support MSTP</a>
+            </div>
+        </nav>
+
+    </div>
+</header>
+    
+    <main class="contact-page-wrapper">
+        
+        <section class="page-hero reveal-on-scroll">
+            <div class="hero-content-inner">
+                <h1 class="page-main-title">Get in Touch</h1>
+                <p class="page-subtitle">Whether you're a funder, partner, school, journalist, or simply want to know more, we'd love to hear from you.</p>
+            </div>
         </section>
 
-        <!-- Contact Form Section -->
-        <section>
-            <form action="#" method="POST">
+        <section class="contact-grid-container">
+            <div class="contact-split-layout">
                 
-                <!-- Full Name Field -->
-                <div>
-                    <label for="full-name">Full Name *</label>
-                    <input type="text" id="full-name" name="full_name" required>
+                <div class="contact-info-panel reveal-on-scroll">
+                    <div class="info-block-meta">
+                        <h2 class="panel-headline">Contact Information</h2>
+                        <p class="panel-explanatory">Reach out directly via our official channels. Our support management framework responds within 24 business hours.</p>
+                    </div>
+
+                    <div class="info-details-list">
+                        <div class="info-item-card">
+                            <div class="info-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </div>
+                            <div class="info-text-box">
+                                <span class="info-label">Email Us</span>
+                                <a href="mailto:info@multiskillsafrica.org" class="info-anchor-link">info@multiskillsafrica.org</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item-card">
+                            <div class="info-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="info-text-box">
+                                <span class="info-label">Our Headquarters</span>
+                                <p class="info-static-text">Lagos, Nigeria</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Email Address Field -->
-                <div>
-                    <label for="email-address">Email Address *</label>
-                    <input type="email" id="email-address" name="email_address" required>
+                <div class="contact-form-panel reveal-on-scroll">
+                    <form class="mstp-interactive-form" action="#" method="POST" autocomplete="off">
+                        
+                        <div class="form-row-split">
+                            <div class="input-group-wrapper">
+                                <label class="form-field-label" id="label-name" for="full-name">Full Name <span class="required-asterisk">*</span></label>
+                                <input class="form-interactive-input" type="text" id="full-name" name="full_name" aria-labelledby="label-name" required>
+                            </div>
+
+                            <div class="input-group-wrapper">
+                                <label class="form-field-label" id="label-email" for="email-address">Email Address <span class="required-asterisk">*</span></label>
+                                <input class="form-interactive-input" type="email" id="email-address" name="email_address" aria-labelledby="label-email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-split">
+                            <div class="input-group-wrapper">
+                                <label class="form-field-label" id="label-org" for="organisation">Organisation</label>
+                                <input class="form-interactive-input" type="text" id="organisation" name="organisation" aria-labelledby="label-org">
+                            </div>
+
+                            <div class="input-group-wrapper">
+                                <label class="form-field-label" id="label-subject" for="subject">Subject <span class="required-asterisk">*</span></label>
+                                <div class="select-custom-chevron-wrap">
+                                    <select class="form-interactive-input select-dropdown" id="subject" name="subject" aria-labelledby="label-subject" required>
+                                        <option value="" disabled selected>Select a subject...</option>
+                                        <option value="General Enquiry">General Enquiry</option>
+                                        <option value="Partnership">Partnership</option>
+                                        <option value="Donation">Donation</option>
+                                        <option value="Press & Media">Press & Media</option>
+                                        <option value="School Participation">School Participation</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group-wrapper usage-textarea">
+                            <label class="form-field-label" id="label-msg" for="message">Message <span class="required-asterisk">*</span></label>
+                            <textarea class="form-interactive-input dynamic-textarea" id="message" name="message" rows="6" aria-labelledby="label-msg" required></textarea>
+                        </div>
+
+                        <div class="submit-action-row">
+                            <button class="form-submit-master-btn" type="submit">
+                                <span>Send Message</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-horizontal"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></svg>
+                            </button>
+                        </div>
+
+                    </form>
                 </div>
 
-                <!-- Organisation Field -->
-                <div>
-                    <label for="organisation">Organisation</label>
-                    <input type="text" id="organisation" name="organisation">
-                </div>
-
-                <!--  Dropdown Section for about dmedia-->
-                <div>
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                        <option value="" disabled selected>Select a subject...</option>
-                        <option value="General Enquiry">General Enquiry</option>
-                        <option value="Partnership">Partnership</option>
-                        <option value="Donation">Donation</option>
-                        <option value="Press & Media">Press & Media</option>
-                        <option value="School Participation">School Participation</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <!-- Message Field -->
-                <div>
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div>
-                    <button type="submit">Send Message</button>
-                </div>
-
-            </form>
-
-            
+            </div>
+        </section>
     </main>
 
+        <!-- 5. FOOTER SECTION (Logo, Columns, Newsletter, Socials, Legal) -->
+<footer class="site-footer">
+    <!-- Main informational and interactive column grids -->
+    <div class="footer-columns">
+
+        <!-- Footer Column 1 — Logo + Tagline -->
+        <div class="footer-col brand-info-col">
+            <div class="brand-logo-wrap">
+                <a href="/" aria-label="MSTP Home">
+                    <!-- MSTP inline SVG logo platform hook -->
+                    <img src="/IMAGES/multiskillsafrica-logo.png" alt="multiskillsafricalogo Logo" class="logo">
+                </a>
+            </div>
+            <p class="footer-tagline">Building Africa's Future — One Skill at a Time.</p>
+            <p class="footer-subline">Multi-Skill Teenpreneurship Program | multiskillsafrica.org</p>
+        </div>
+
+        <!-- Footer Column 2 — Take Action -->
+        <div class="footer-col">
+            <h2 class="footer-heading">Take Action</h2>
+            <ul class="footer-links-list">
+                <li><a href="support.html" class="footer-link">Support MSTP &rarr;</a></li>
+                <li><a href="/give" class="footer-link">Donate Now &rarr;</a></li>
+                <li><a href="contact.html" class="footer-link">Partner With Us &rarr;</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer Column 3 — About Us -->
+        <div class="footer-col">
+            <h2 class="footer-heading">About Us</h2>
+            <ul class="footer-links-list">
+                <li><a href="about-us.html" class="footer-link">Our Story</a></li>
+                <li><a href="our-programs.html" class="footer-link">Our Programs</a></li>
+                <li><a href="team.html" class="footer-link">Our Team</a></li>
+                <li><a href="partner.html" class="footer-link">Our Partners</a></li>
+                <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer Column 4 — Learn More -->
+        <div class="footer-col">
+            <h2 class="footer-heading">Learn More</h2>
+            <ul class="footer-links-list">
+                <li><a href="blog.html" class="footer-link">News & Blog</a></li>
+                <li><a href="impact.html" class="footer-link">Impact</a></li>
+                <li><a href="/financials" class="footer-link">Financials</a></li>
+                <li><a href="/media" class="footer-link">Media Kit</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer — Newsletter Signup -->
+        <div class="footer-col newsletter-col">
+            <h2 class="footer-heading">Stay Updated</h2>
+            <p class="newsletter-subtext">Get student stories, programme updates, and impact reports in your inbox.</p>
+            <form action="#" method="POST" class="footer-newsletter-form">
+                <div class="newsletter-input-wrap">
+                    <input 
+                        type="email" 
+                        class="newsletter-input" 
+                        placeholder="Enter your email address" 
+                        required 
+                        aria-label="Email address for newsletter"
+                    >
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </div>
+            </form>
+            
+            <!-- Footer — Social Icons Block -->
+            <div class="footer-social-wrap">
+                <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer — Legal Row and Credits -->
+    <div class="footer-bottom">
+        <div class="footer-legal-left">
+            <p class="copyright">&copy; 2026 Multi-Skill Teenpreneurship Program (MSTP). All rights reserved.</p>
+        </div>
+        <div class="footer-legal-right">
+            <ul class="legal-links-list">
+                <li><a href="/privacy" class="legal-link">Privacy Policy</a></li>
+                <li><a href="/terms" class="legal-link">Terms of Use</a></li>
+                <li><a href="contact.html" class="legal-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    <script src="general-script.js"></script>
 </body>
 </html>

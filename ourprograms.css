@@ -1,0 +1,157 @@
+/* ==========================================================================
+   PROGRAMS PAGE SPECIFIC ROOT TRACK
+   ========================================================================== */
+
+.programs-page-wrapper {
+    width: 100%;
+    background-color: #FAFAFA; /* Soft off-white to let layout cards pop */
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   STORY LAYOUT & TYPOGRAPHY CORE
+   ========================================================================= */
+
+.story-layout-section {
+    width: 100%;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.story-inner-container {
+    width: 100%;
+    max-width: 85rem; /* Limits line length to maximize editorial readability */
+    margin: 0 auto;
+    text-align: center; /* Centers your intro hook perfectly */
+}
+
+.story-lead-paragraph {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #333333; /* Clean dark-neutral gray for optimal text contrast */
+    font-weight: 400;
+}
+
+/* Mobile Responsive Optimization Override */
+@media (max-width: 768px) {
+    .story-layout-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .story-lead-paragraph {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: left; /* Switches to left-aligned text on mobile for better flow */
+    }
+}
+
+/* ==========================================================================
+   MODULES GRID OUTER SECTION WRAPPER
+   ========================================================================== */
+
+.modules-section-wrapper {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+}
+
+.modules-inner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4.5rem;
+  width: 100%;
+}
+
+/* ==========================================================================
+   EDITORIAL CARD DESIGN COMPONENT
+   ========================================================================== */
+
+.module-editorial-card {
+  background: #FFFFFF;
+  border-radius: 2.4rem; /* Soft, highly-rounded corners matching layout */
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module-editorial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.08);
+}
+
+/* Media Canvas Area */
+.module-card-media {
+  width: 100%;
+  height: 28rem;
+  background-color: #F1F5F9;
+}
+
+.module-raw-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Info Panel Formatting */
+.module-card-details {
+  padding: 4rem 3.5rem; /* Balanced, clean breathing room without metadata rows */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Large striking headline type */
+.module-editorial-title {
+  font-family: var(--font-heading), serif;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #0F172A; /* Deep dark slate-navy ink */
+  margin: 0 0 2rem 0;
+}
+
+/* Descriptions Stack Box */
+.module-description-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.module-body-excerpt {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.55rem;
+  line-height: 1.65;
+  color: #475569; /* Balanced charcoal layout text */
+  margin: 0;
+}
+
+.module-body-excerpt strong {
+  color: #0F172A;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 968px) {
+  .modules-inner-grid {
+    gap: 3rem;
+  }
+  .module-card-details {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modules-inner-grid {
+    grid-template-columns: 1fr; /* Stacks nicely on mobile viewports */
+    gap: 3.5rem;
+  }
+}
