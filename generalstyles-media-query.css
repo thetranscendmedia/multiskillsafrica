@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SITE STRUCTURE & GLOBAL NAVIGATION OVERRIDES (Below 1000px)
+   1. SITE STRUCTURE & GLOBAL NAVIGATION OVERRIDES (Below 1000px)
    ========================================================================== */
 @media (max-width: 1000px) {
   /* Hide desktop-specific elements safely */
@@ -38,25 +38,29 @@
 
   /* Base Mobile Drawer Panel */
   #nav-links {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
-    right: -100%;           /* Sits hidden off-screen to the right by default */
+    right: 0;                /* FIXED: Anchor directly to the edge context line */
     width: 75%;              /* Takes up a clean 75% width of the mobile viewport */
     height: 100vh;           /* Spans the complete device height */
     background-color: var(--color-primary); /* Rich Dark Navy background surface */
     padding: 10rem 4rem;
     gap: 3.5rem;             /* Spacing between your interactive link elements */
     z-index: 2000;           /* Floating layer height context */
-    transition: right 0.3s ease-in-out; /* Smooth sliding mechanic */
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
     overflow-y: auto;        /* Allows drawer content to scroll if link count overflows screen */
+    
+    /* CORE FIX: Move container off-screen via transform layer instead of positions */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out; /* Smooth sliding mechanic */
+    will-change: transform;
   }
 
   /* Interactive Sliding Trigger */
   #nav-links.show {
-    right: 0;                /* Slides the drawer layout directly into the screen view */
+    transform: translateX(0); /* FIXED: Slides the drawer layout directly into view cleanly */
   }
 
   /* Link & Inline SVG Layout Settings */
@@ -92,7 +96,7 @@
 }
 
 /* ==========================================================================
-   FOUNDER QUOTE UNIFIED CARD RESPONSIVE BREAKPOINT
+   2. FOUNDER QUOTE UNIFIED CARD RESPONSIVE BREAKPOINT (Below 900px)
    ========================================================================== */
 @media (max-width: 900px) {
   .founder-card-master {
@@ -139,7 +143,7 @@
 }
 
 /* ==========================================================================
-   PROGRAMME GRID RESPONSIVE METRICS
+   3. PROGRAMME GRID RESPONSIVE METRICS (Below 850px)
    ========================================================================== */
 @media (max-width: 850px) {
   .programme-grid-container {
@@ -158,83 +162,7 @@
 }
 
 /* ==========================================================================
-   STORY CARD SCROLL RESPONSIVE CONFIGURATIONS
-   ========================================================================== */
-@media (max-width: 500px) {
-  .story-blog-card {
-    flex: 0 0 31rem; /* Marginally shrinks card width footprint on small viewports */
-  }
-
-  .story-content-box {
-    padding: 2.5rem 2rem;
-  }
-  
-  .story-card-title {
-    font-size: 1.9rem;
-  }
-}
-
-/* ==========================================================================
-   NEWSLETTER CTA RESPONSIVE OVERRIDES
-   ========================================================================== */
-@media (max-width: 600px) {
-  .newsletter-section {
-    padding: 8rem 1.5rem;
-  }
-
-  /* Morphs inline components into a stacked layout structure safely */
-  .newsletter-form-group {
-    flex-direction: column;
-    background: transparent;
-    border: none;
-    padding: 0;
-    box-shadow: none;
-    gap: 1.5rem;
-  }
-
-  .newsletter-input {
-    width: 100%;
-    background-color: var(--bg-main);
-    border-radius: 0.8rem;
-    padding: 1.6rem 2rem;
-    border: 1px solid rgba(10, 17, 40, 0.08);
-    box-shadow: 0 4px 20px rgba(10, 17, 40, 0.03);
-  }
-
-  .newsletter-submit-btn {
-    width: 100%;
-    padding: 1.6rem;
-  }
-}
-
-/* ==========================================================================
-   PARTNERS LOGO BAR RESPONSIVE METRICS
-   ========================================================================== */
-@media (max-width: 768px) {
-  .partners-logo-grid {
-    gap: 4rem 3rem; /* Tighter layout gap grid spacing when components wrap down */
-  }
-
-  .partner-logo-item {
-    width: 16rem;
-    height: 75px;
-    opacity: 0.85; /* Marginally higher base visibility for touch viewports */
-  }
-}
-
-@media (max-width: 400px) {
-  .partners-logo-grid {
-    gap: 3.5rem 2rem;
-  }
-
-  .partner-logo-item {
-    width: 13rem;
-    height: 60px;
-  }
-}
-
-/* ==========================================================================
-   UPDATED SYSTEM NEW FOOTER RESPONSI-METRICS
+   4. UPDATED SYSTEM NEW FOOTER RESPONSI-METRICS (Below 768px)
    ========================================================================== */
 @media (max-width: 768px) {
   .site-footer {
@@ -296,5 +224,80 @@
   .legal-links-list {
     flex-wrap: wrap;
     gap: 1.5rem 2rem;
+  }
+
+  /* PARTNERS LOGO BAR RESPONSIVE METRICS INTEGRATION */
+  .partners-logo-grid {
+    gap: 4rem 3rem; /* Tighter layout gap grid spacing when components wrap down */
+  }
+
+  .partner-logo-item {
+    width: 16rem;
+    height: 75px;
+    opacity: 0.85; /* Marginally higher base visibility for touch viewports */
+  }
+}
+
+/* ==========================================================================
+   5. NEWSLETTER CTA RESPONSIVE OVERRIDES (Below 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .newsletter-section {
+    padding: 8rem 1.5rem;
+  }
+
+  /* Morphs inline components into a stacked layout structure safely */
+  .newsletter-form-group {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    gap: 1.5rem;
+  }
+
+  .newsletter-input {
+    width: 100%;
+    background-color: var(--bg-main);
+    border-radius: 0.8rem;
+    padding: 1.6rem 2rem;
+    border: 1px solid rgba(10, 17, 40, 0.08);
+    box-shadow: 0 4px 20px rgba(10, 17, 40, 0.03);
+  }
+
+  .newsletter-submit-btn {
+    width: 100%;
+    padding: 1.6rem;
+  }
+}
+
+/* ==========================================================================
+   6. GLOBAL STORY CARD & GENERAL MOBILE VIEWPORTS (Below 500px)
+   ========================================================================== */
+@media (max-width: 500px) {
+  .story-blog-card {
+    flex: 0 0 31rem; /* Marginally shrinks card width footprint on small viewports */
+  }
+
+  .story-content-box {
+    padding: 2.5rem 2rem;
+  }
+  
+  .story-card-title {
+    font-size: 1.9rem;
+  }
+}
+
+/* ==========================================================================
+   7. EXTREMELY SMALL LAYOUT SCREEN BREAKPOINTS (Below 400px)
+   ========================================================================== */
+@media (max-width: 400px) {
+  .partners-logo-grid {
+    gap: 3.5rem 2rem;
+  }
+
+  .partner-logo-item {
+    width: 13rem;
+    height: 60px;
   }
 }
