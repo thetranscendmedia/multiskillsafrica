@@ -95,6 +95,13 @@
   }
 }
 
+@media (max-width: 600px) {
+  .hero-cta-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* ==========================================================================
    2. FOUNDER QUOTE UNIFIED CARD RESPONSIVE BREAKPOINT (Below 900px)
    ========================================================================== */
