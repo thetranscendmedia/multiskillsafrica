@@ -117,7 +117,7 @@
   gap: 0.8rem;
 }
 
-.stat-number {
+.stat-number, .stat-number-year {
   font-family: var(--font-heading);
   font-size: clamp(3.2rem, 5vw, 4.8rem);
   font-weight: 700;
