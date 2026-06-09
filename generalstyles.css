@@ -399,6 +399,54 @@ ol, ul, li {
   color: var(--text-light);
 }
 
+.section-layout-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 4rem;
+  box-sizing: border-box;
+  
+  /* Flexbox positioning system to strictly center-align the parent contents */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-inner-container {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  text-align: center; /* Centers the multi-line inline text elements inside */
+}
+
+.section-lead-paragraph {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive Scaling for Seamless Tracking Across Device Viewports */
+@media (max-width: 768px) {
+  .section-layout-section {
+    padding: 2rem;
+  }
+  .section-lead-paragraph {
+    font-size: 1.9rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-layout-section {
+    padding: 5rem 1.6rem 3rem 1.6rem;
+  }
+  .section-lead-paragraph {
+    font-size: 1.75rem;
+  }
+}
+
 
 /* ==========================================================================
    4. SCROLL REVEAL UTILITY ENGINE
@@ -528,6 +576,7 @@ ol, ul, li {
 .section-subtext {
   font-family: var(--font-body);
   font-size: 1.4rem;
+  max-width: 60rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15rem;

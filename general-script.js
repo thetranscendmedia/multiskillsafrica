@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 const animateStatsCounters = () => {
   const counters = document.querySelectorAll('.stat-number');
-  const trackingDuration = 1500;
+  const trackingDuration = 3000;
 
   counters.forEach(counter => {
     const targetValue = parseInt(counter.getAttribute('data-target'), 10);

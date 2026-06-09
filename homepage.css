@@ -172,8 +172,7 @@
 }
 
 .about-snippet-text {
-  font-family: var(--font-heading); 
-  font-style: italic;
+  font-family: var(--font-body); 
   font-size: clamp(1.8rem, 2.5vw, 2.2rem);
   line-height: 1.7;
   color: var(--color-primary);
