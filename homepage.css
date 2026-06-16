@@ -14,20 +14,41 @@
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+.hero-image-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
 .hero-image {
    background-size: cover;
+   width: 50%;
+  height: max-content;
   background-repeat: no-repeat;
-  width: 100%;
   background-position: center center;
+  display: block;
 }
+
+
 
 /* ==========================================================================
    HERO BANNER LAYOUT
    ========================================================================== */
 .hero-section {
   background: var(--color-primary);
-
+  width: 50%;
   padding: 4rem;
+}
+
+@media (max-width: 1000px) {
+  .hero-image-wrap {
+  flex-direction: column;
+  }
+
+  .hero-section,
+  .hero-image {
+    width: 100vw;
+  }
 }
 
 .hero-headline {
