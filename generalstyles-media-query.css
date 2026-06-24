@@ -256,7 +256,6 @@
   .partner-logo-item {
     width: 16rem;
     height: 75px;
-    opacity: 0.85; /* Marginally higher base visibility for touch viewports */
   }
 }
 

@@ -21,7 +21,7 @@
    ========================================================================== */
 .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-              url('/IMAGES/MSTP-classroom.jpg') center bottom / cover no-repeat;
+              url('/IMAGES/MSTP-hero-image.jpg') center center / cover no-repeat;
   width: 100vw;
   height: 100vh;
   padding: 4rem;
@@ -630,10 +630,8 @@
   width: 22rem;
   height: 100px;
   text-decoration: none;
-  opacity: 0.65;
   /* Kept your original cubic-bezier transition strings intact */
-  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
               
   /* CHANGED: Anchor the rotation pivot to the top center for the pendulum effect */
   transform-origin: top center;
@@ -643,20 +641,11 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  /* Premium grayscale base filter that shifts to full color dynamically on interaction */
-  filter: grayscale(100%);
-  transition: filter 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Interaction Effects */
 .partner-logo-item:hover {
-  opacity: 1;
-  /* CHANGED: Replaced 'scale(1.04)' with the infinite decaying dangle animation loop */
   animation: dangleLogoBar 1.2s ease-in-out infinite;
-}
-
-.partner-logo-item:hover .partner-logo-img {
-  filter: grayscale(0%);
 }
 
 /* ==========================================================================
