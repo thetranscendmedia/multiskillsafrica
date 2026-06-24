@@ -21,7 +21,7 @@
    ========================================================================== */
 .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-              url('/IMAGES/MSTP-hero-image.jpg') center center / cover no-repeat;
+              url('/IMAGES/MSTP-hero-image.jpg') center top / cover no-repeat;
   width: 100vw;
   height: 100vh;
   padding: 4rem;
