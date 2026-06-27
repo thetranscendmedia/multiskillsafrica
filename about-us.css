@@ -246,3 +246,32 @@
   margin: 0;
 }
 
+/* Container forces the text module and image module to line up horizontally */
+.story-inner-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: space-between;
+    gap: 40px; /* Creates clean spacing between the text and the image */
+}
+
+/* Gives the left side text priority sizing */
+.story-left-content {
+    flex: 1.2; 
+}
+
+/* Adjusts the right side container width */
+.story-right-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+/* Ensures the image itself is responsive and behaves nicely */
+.story-img {
+    width: 100%;
+    max-width: 500px; /* Keeps the image from getting too bloated on massive screens */
+    height: auto;
+    border-radius: 8px; /* Optional: adds smooth rounded corners to match modern design */
+    object-fit: cover;
+}

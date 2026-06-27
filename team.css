@@ -53,6 +53,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  object-position: top;
 }
 
 .profile-card-info {
