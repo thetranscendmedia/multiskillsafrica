@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon — MultiSkillsAfrica</title>
+    <link href="/IMAGES/multiskillsafrica-fav.png" rel="icon">
+    
+    <!-- Professional Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Modern CSS Reset & Variable Setup */
+        :root {
+            --primary-color: #0f172a; /* Deep Slate / Executive Background */
+            --accent-color: #2563eb;  /* Trustworthy Professional Blue */
+            --text-main: #f8fafc;      /* Crisp Off-White */
+            --text-muted: #94a3b8;     /* Elegant Soft Gray */
+            --card-bg: rgba(30, 41, 59, 0.7); /* Translucent Overlay */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 2rem 1rem;
+        }
+
+        /* Abstract professional background shapes for depth */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(0,0,0,0) 70%);
+            top: -10%;
+            left: -10%;
+            z-index: 1;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, rgba(0,0,0,0) 70%);
+            bottom: -20%;
+            right: -10%;
+            z-index: 1;
+        }
+
+        /* Container Layout */
+        .coming-soon-container {
+            position: relative;
+            z-index: 10;
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 3.5rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Logo Styling */
+        .brand-logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Typography */
+        .badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.15);
+            color: #60a5fa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.25);
+        }
+
+        .main-title {
+            font-family: 'Lora', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        /* Newsletter Area */
+        .newsletter-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-box h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .newsletter-box p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Interactive Action Row */
+        .action-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 480px) {
+            .action-row {
+                flex-direction: row;
+            }
+        }
+
+        .email-display {
+            flex: 1;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Inter', monospace;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: all; /* Allows easy highlight copy on click */
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 1rem 1.75rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Footer Attribution */
+        .footer-notice {
+            position: relative;
+            z-index: 10;
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Responsive Scaling for smaller screens */
+        @media (max-width: 600px) {
+            .coming-soon-container {
+                padding: 2.5rem 1.5rem;
+            }
+            .main-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="coming-soon-container">
+        
+        <!-- Brand Identity Asset -->
+        <!-- Replace src with your active logo path if needed -->
+        <img src="/IMAGES/multiskillsafrica-logo.png" alt="MultiSkillsAfrica Logo" class="brand-logo">
+
+        <!-- Status Tag -->
+        <span class="badge">Platform Evolution</span>
+
+        <!-- Primary Announcement Heading -->
+        <h1 class="main-title">Something Impactful is on the Horizon</h1>
+        
+        <p class="subtitle">
+            We are fine-tuning our digital home to better showcase our multi-skill initiatives across Africa. Our complete official platform launches very soon.
+        </p>
+
+        <!-- Newsletter / Contact Box Area -->
+        <div class="newsletter-box">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get exclusive updates on our launches, program schedules, and milestone events directly in your inbox.</p>
+            
+            <div class="action-row">
+                <!-- Displays the official email cleanly -->
+                <div class="email-display" title="Click to select email">
+                    multiskillafrica@gmail.com
+                </div>
+                <!-- Direct mail anchor that behaves professionally -->
+                <a href="mailto:multiskillafrica@gmail.com?subject=Newsletter%20Subscription" class="cta-button">
+                    <span>Subscribe Now</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Minimalistic Legal Copyright -->
+    <p class="footer-notice">&copy; 2026 MultiSkillsAfrica. All rights reserved.</p>
+
+</body>
+</html>
