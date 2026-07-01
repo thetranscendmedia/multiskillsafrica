@@ -3,328 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon — MultiSkillsAfrica</title>
-    <link href="/IMAGES/multiskillsafrica-fav.png" rel="icon">
+    <title>Blog Coming Soon — MultiSkillsAfrica</title>
+
+    <link rel="stylesheet" href="generalstyles.css">
     
-    <!-- Premium Fonts -->
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="generalstyles-media-query.css">
+    <link href="/IMAGES/multiskillsafrica-fav.png" rel="icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-main: #ffffff;
-            --primary-text: #0f172a;
-            --muted-text: #64748b;
-            --accent-blue: #2563eb;
-            --bg-panel: #f8fafc;
-            --border-line: #e2e8f0;
-            
-            /* Custom chat bubble shades */
-            --bubble-user: #f1f5f9;
-            --bubble-system: #eff6ff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--primary-text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 2rem 1rem;
-            overflow-x: hidden;
-        }
-
-        /* Ambient soft geometric backdrop accent */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, rgba(255,255,255,0) 70%);
-            top: -10%;
-            z-index: 1;
-        }
-
-        /* 1. STRUCTURAL CSS ANIMATIONS */
-        @keyframes windowEntrance {
-            0% { opacity: 0; transform: translateY(24px) scale(0.98); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        @keyframes bubblePop {
-            0% { opacity: 0; transform: scale(0.95) translateY(10px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        @keyframes pulseDot {
-            0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        /* Outer Frame Layout */
-        .workspace-wrapper {
-            position: relative;
-            z-index: 10;
-            max-width: 580px;
-            width: 100%;
-            text-align: center;
-            animation: windowEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .brand-logo {
-            max-width: 185px;
-            height: auto;
-            margin-bottom: 2.5rem;
-        }
-
-        /* Catchy Main Heading */
-        .page-headline {
-            font-family: 'Lora', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            line-height: 1.25;
-            margin-bottom: 2rem;
-        }
-
-        /* 2. THE DIALOGUE CONTAINER BOX */
-        .dialogue-window {
-            background: #ffffff;
-            border: 1px solid var(--border-line);
-            border-radius: 24px;
-            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
-            overflow: hidden;
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-
-        /* Window Header Bar mimicking professional app interfaces */
-        .window-top-bar {
-            background: var(--bg-panel);
-            border-bottom: 1px solid var(--border-line);
-            padding: 1rem 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .window-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #cbd5e1;
-        }
-        .window-dot.active-status {
-            background: #4ade80; /* Soft green live indicator */
-            margin-left: auto;
-            width: 8px;
-            height: 8px;
-        }
-
-        .window-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-left: 0.25rem;
-        }
-
-        /* Chat Streams Content Viewport */
-        .dialogue-stream {
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        /* Indivdual Dialog Bubbles */
-        .msg-bubble {
-            max-width: 85%;
-            padding: 1rem 1.25rem;
-            border-radius: 16px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            opacity: 0;
-            animation: bubblePop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        /* User Dialog Bubble (Left Side) */
-        .msg-bubble.user-query {
-            background: var(--bubble-user);
-            color: var(--primary-text);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-            animation-delay: 0.2s;
-        }
-
-        /* System Action Response Bubble (Right Side) */
-        .msg-bubble.system-reply {
-            background: var(--bubble-system);
-            color: var(--accent-blue);
-            font-weight: 500;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            animation-delay: 0.9s;
-        }
-
-        /* Catchy Animated Typing Status Indicator */
-        .loading-ticker {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            background: var(--bg-panel);
-            padding: 0.75rem 1.25rem;
-            border-radius: 100px;
-            width: max-content;
-            align-self: flex-end;
-            opacity: 0;
-            animation: bubblePop 0.4s ease forwards;
-            animation-delay: 1.6s;
-        }
-
-        .loading-ticker span {
-            font-size: 0.85rem;
-            color: var(--muted-text);
-            font-weight: 500;
-            margin-right: 0.25rem;
-        }
-
-        .ticker-dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent-blue);
-            border-radius: 50%;
-            display: inline-block;
-            animation: pulseDot 1.4s infinite ease-in-out both;
-        }
-        .ticker-dot:nth-child(2) { animation-delay: 0.2s; }
-        .ticker-dot:nth-child(3) { animation-delay: 0.4s; }
-
-
-        /* 3. NEWSLETTER UTILITY CONSOLE */
-        .subscribe-console {
-            background: var(--bg-panel);
-            border: 1px solid var(--border-line);
-            padding: 1.75rem;
-            border-radius: 20px;
-            text-align: center;
-            opacity: 0;
-            animation: bubblePop 0.6s ease forwards;
-            animation-delay: 1.8s;
-        }
-
-        .subscribe-console h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-        }
-
-        .subscribe-console p {
-            font-size: 0.9rem;
-            color: var(--muted-text);
-            margin-bottom: 1.25rem;
-        }
-
-        .action-flex-row {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        @media (min-width: 480px) {
-            .action-flex-row {
-                flex-direction: row;
-            }
-        }
-
-        .email-display-field {
-            flex: 1;
-            background: #ffffff;
-            border: 1px solid var(--border-line);
-            padding: 0.9rem 1.25rem;
-            border-radius: 12px;
-            color: var(--primary-text);
-            font-family: 'Inter', monospace;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            user-select: all;
-            transition: all 0.2s ease;
-        }
-
-        .email-display-field:hover {
-            border-color: #cbd5e1;
-        }
-
-        .cta-submit-btn {
-            background: var(--accent-blue);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 0.9rem 1.5rem;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .cta-submit-btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
-        }
-
-        .cta-submit-btn svg {
-            transition: transform 0.2s ease;
-        }
-
-        .cta-submit-btn:hover svg {
-            transform: translate(2px, -2px);
-        }
-
-        /* Bottom Copyright */
-        .footer-stamp {
-            margin-top: 2.5rem;
-            font-size: 0.8rem;
-            color: #94a3b8;
-            letter-spacing: 0.02em;
-            opacity: 0;
-            animation: bubblePop 0.6s ease forwards;
-            animation-delay: 2.2s;
-        }
-
-        @media (max-width: 600px) {
-            .page-headline { font-size: 1.9rem; }
-            .dialogue-stream { padding: 1.25rem 1rem; }
-            .msg-bubble { max-width: 90%; font-size: 0.9rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="workspace-wrapper">
-        
-        <!-- Corporate Identity Asset -->
-        <img src="/IMAGES/multiskillsafrica-logo.png" alt="MultiSkillsAfrica Logo" class="brand-logo">
+       <!-- 1. NAVIGATION HEADER (The Welcome Gate) -->
+<header id="main-header" class="site-header">
+    <div class="header-container">
+
+        <!-- Website Brand/Logo Area -->
+        <div class="brand">
+            <a href="index.html">
+                <img src="/IMAGES/multiskillsafrica-logo.png" alt="multilskillsafrica-logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Desktop Navigation Area -->
+        <nav id="main-nav" class="navigation" aria-label="Main Navigation">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about-us.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="ourprograms.html" class="nav-link">Our Programs</a></li>
+                <!-- <li class="nav-item"><a href="impact.html" class="nav-link">Our Impact</a></li>
+                <li class="nav-item"><a href="trainers.html" class="nav-link">Trainers Module</a></li> -->
+                <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link active">News & Blog</a></li>
+                <!-- <li class="nav-item"><a href="partner.html" class="nav-link">Official Partners</a></li> -->
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Desktop Action Button Section -->
+        <div class="header-actions active">
+            <a href="support.html" class="nav-cta">Support MSTP</a>
+        </div>
+
+        <!-- MOBILE NAVIGATION TRACK ENGINE -->   
+        <nav id="mobile-navbar" aria-label="Mobile Navigation">
+            <!-- Toggle Button (Always visible on mobile viewports) -->
+            <button id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="nav-links">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+            </button>
+
+            <!-- Navigation Links Container (The Sliding Drawer) -->
+            <div id="nav-links">
+                <!-- Close Button inside the sliding drawer -->
+                <button id="menu-close" aria-label="Close Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+
+                <a href="index.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a>
+                <a href="about-us.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>About</a>
+                <a href="ourprograms.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Our Programs</a>
+                
+                <a href="impact.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Our Impact</a>
+                <a href="trainers.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M9 21h6"/><path d="M8 11l3-3 3 3"/></svg>Trainers Module</a>
+                <a href="team.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round"><path d="M18 21a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/></svg>Our Team</a>
+                <a href="blog.html" class="mobile-nav-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>News & Blog</a>
+                <a href="partner.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4l-11.6-11.6a2.1 2.1 0 0 0-3 3l3.8 3.8"/><path d="m14 14 2.5 2.5a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4L11 2"/><path d="M17 11V7a1 1 0 0 0-1-1h-4"/><path d="M10 11H6a1 1 0 0 1-1-1V6"/></svg>Official Partners</a>
+                <a href="contact.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Contact Us</a>
+
+                <a href="support.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>Support MSTP</a>
+            </div>
+        </nav>
+
+    </div>
+</header>
+
+
+
+
+<div class="workspace-wrapper">
 
         <!-- Catchy Modern Title -->
         <h1 class="page-headline">Fresh Content is Rendering</h1>
@@ -380,8 +139,92 @@
 
     </div>
 
-    <!-- Footer Identity Document Label -->
-    <p class="footer-stamp">&copy; 2026 MultiSkillsAfrica. All rights reserved.</p>
 
+    
+        <!-- 5. FOOTER SECTION (Logo, Columns, Newsletter, Socials, Legal) -->
+<footer class="site-footer">
+    <!-- Main informational and interactive column grids -->
+    <div class="footer-columns">
+
+        <!-- Footer Column 1 — Logo + Tagline -->
+        <div class="footer-col brand-info-col">
+            <div class="brand-logo-wrap">
+                <a href="/" aria-label="MSTP Home">
+                    <!-- MSTP inline SVG logo platform hook -->
+                    <img src="/IMAGES/multiskillsafrica-logo.png" alt="multiskillsafricalogo Logo" class="logo">
+                </a>
+            </div>
+            <p class="footer-tagline">Building Africa's Future — One Skill at a Time.</p>
+            <p class="footer-subline">Multi-Skill Teenpreneurship Program | multiskillsafrica.org</p>
+        </div>
+
+        <!-- Footer Column 2 — Take Action -->
+        <div class="footer-col">
+            <h2 class="footer-heading">Take Action</h2>
+            <ul class="footer-links-list">
+                <li><a href="support.html" class="footer-link">Support MSTP &rarr;</a></li>
+                <li><a href="support.html" class="footer-link">Donate Now &rarr;</a></li>
+                <li><a href="contact.html" class="footer-link">Partner With Us &rarr;</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer Column 3 — About Us -->
+        <div class="footer-col">
+            <h2 class="footer-heading">About Us</h2>
+            <ul class="footer-links-list">
+                <li><a href="about-us.html" class="footer-link">Our Story &rarr;</a></li>
+                <li><a href="our-programs.html" class="footer-link">Our Programs &rarr;</a></li>
+                <li><a href="team.html" class="footer-link">Our Team &rarr;</a></li>
+                <li><a href="partner.html" class="footer-link">Our Partners &rarr;</a></li>
+                <li><a href="contact.html" class="footer-link">Contact &rarr;</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer Column 4 — Learn More -->
+        <div class="footer-col">
+            <h2 class="footer-heading">Learn More</h2>
+            <ul class="footer-links-list">
+                <li><a href="blog.html" class="footer-link">News & Blog &rarr;</a></li>
+                <li><a href="impact.html" class="footer-link">Impact &rarr;</a></li>
+                <li><a href="financials.html" class="footer-link">Financials &rarr;</a></li>
+                <li><a href="/media" class="footer-link">Media Kit &rarr;</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer — Newsletter Signup -->
+        <div class="footer-col newsletter-col">
+            
+            <!-- Footer — Social Icons Block -->
+            <div class="footer-social-wrap">
+                <a href="https://www.facebook.com/profile.php?id=61550199511296" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="https://x.com/Multiskill142" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/mstpafrica/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer — Legal Row and Credits -->
+    <div class="footer-bottom">
+        <div class="footer-legal-left">
+            <p class="copyright">&copy; 2026 Multi-Skill Teenpreneurship Program (MSTP). All rights reserved.</p>
+        </div>
+        <div class="footer-legal-right">
+            <ul class="legal-links-list">
+                <li><a href="/privacy" class="legal-link">Privacy Policy</a></li>
+                <li><a href="/terms" class="legal-link">Terms of Use</a></li>
+                <li><a href="contact.html" class="legal-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    <script src="general-script.js"></script>
 </body>
 </html>

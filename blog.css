@@ -1,0 +1,284 @@
+:root {
+            --bg-main: #ffffff;
+            --primary-text: #0f172a;
+            --muted-text: #64748b;
+            --accent-blue: #2563eb;
+            --bg-panel: #f8fafc;
+            --border-line: #e2e8f0;
+            
+            /* Custom chat bubble shades */
+            --bubble-user: #f1f5f9;
+            --bubble-system: #eff6ff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--primary-text);
+            /* min-height: 100vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient soft geometric backdrop accent */
+        /* body::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, rgba(255,255,255,0) 70%);
+            top: -10%;
+            z-index: 1;
+        } */
+
+        /* 1. STRUCTURAL CSS ANIMATIONS */
+        @keyframes windowEntrance {
+            0% { opacity: 0; transform: translateY(24px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes bubblePop {
+            0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Outer Frame Layout */
+        .workspace-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            animation: windowEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            padding: 5rem 2rem;
+        }
+
+        /* Catchy Main Heading */
+        .page-headline {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            margin-bottom: 2rem;
+        }
+
+        /* 2. THE DIALOGUE CONTAINER BOX */
+        .dialogue-window {
+            background: #ffffff;
+            border: 1px solid var(--border-line);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+            overflow: hidden;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        /* Window Header Bar mimicking professional app interfaces */
+        .window-top-bar {
+            background: var(--bg-panel);
+            border-bottom: 1px solid var(--border-line);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .window-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+        }
+        .window-dot.active-status {
+            background: #4ade80; /* Soft green live indicator */
+            margin-left: auto;
+            width: 8px;
+            height: 8px;
+        }
+
+        .window-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-left: 0.25rem;
+        }
+
+        /* Chat Streams Content Viewport */
+        .dialogue-stream {
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Indivdual Dialog Bubbles */
+        .msg-bubble {
+            max-width: 45%;
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            opacity: 0;
+            animation: bubblePop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* User Dialog Bubble (Left Side) */
+        .msg-bubble.user-query {
+            background: var(--bubble-user);
+            color: var(--primary-text);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            animation-delay: 0.2s;
+        }
+
+        /* System Action Response Bubble (Right Side) */
+        .msg-bubble.system-reply {
+            background: var(--bubble-system);
+            color: var(--accent-blue);
+            font-weight: 500;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            animation-delay: 0.9s;
+        }
+
+        /* Catchy Animated Typing Status Indicator */
+        .loading-ticker {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--bg-panel);
+            padding: 0.75rem 1.25rem;
+            border-radius: 100px;
+            width: max-content;
+            align-self: flex-end;
+            opacity: 0;
+            animation: bubblePop 0.4s ease forwards;
+            animation-delay: 1.6s;
+        }
+
+        .loading-ticker span {
+            font-size: 1.5rem;
+            color: var(--muted-text);
+            font-weight: 500;
+            margin-right: 0.25rem;
+        }
+
+        .ticker-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-blue);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulseDot 1.4s infinite ease-in-out both;
+        }
+        .ticker-dot:nth-child(2) { animation-delay: 0.2s; }
+        .ticker-dot:nth-child(3) { animation-delay: 0.4s; }
+
+
+        /* 3. NEWSLETTER UTILITY CONSOLE */
+        .subscribe-console {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-line);
+            padding: 1.75rem;
+            border-radius: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: bubblePop 0.6s ease forwards;
+            animation-delay: 1.8s;
+        }
+
+        .subscribe-console h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .subscribe-console p {
+            font-size: 1.5rem;
+            color: var(--muted-text);
+            margin-bottom: 1.25rem;
+        }
+
+        .action-flex-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 480px) {
+            .action-flex-row {
+                flex-direction: row;
+            }
+        }
+
+        .email-display-field {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid var(--border-line);
+            padding: 0.9rem 1.25rem;
+            border-radius: 12px;
+            color: var(--primary-text);
+            font-family: 'Inter', monospace;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: all;
+            transition: all 0.2s ease;
+        }
+
+        .email-display-field:hover {
+            border-color: #cbd5e1;
+        }
+
+        .cta-submit-btn {
+            background: var(--accent-blue);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.5rem;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-submit-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+        }
+
+        .cta-submit-btn svg {
+            transition: transform 0.2s ease;
+        }
+
+        .cta-submit-btn:hover svg {
+            transform: translate(2px, -2px);
+        }
+
+
+
+        @media (max-width: 600px) {
+            .page-headline { font-size: 1.9rem; }
+            .dialogue-stream { padding: 1.25rem 1rem; }
+            .msg-bubble { max-width: 90%; font-size: 0.9rem; }
+        }
