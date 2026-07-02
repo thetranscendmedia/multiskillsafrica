@@ -1,167 +1,156 @@
- .partners-list-section {
-  width: 100%;
-  background-color: #F8FAFC; /* Light background contrast for the page stream */
-  padding: 2rem;
+/* ==========================================================================
+   OFFICIAL PARTNERS LIST STYLES
+   ========================================================================== */
 
+/* Main Container Stream */
+.partners-list-section {
+    width: 100%;
+    background-color: #ffffff; /* Professional crisp white background */
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
+/* Structural Row Manager */
 .partners-stacked-column {
-  display: flex;
-  flex-direction: column;
-  gap: 6rem; /* Keeps distinct vertical tracking separation between partner profiles */
-  width: 100%;
-  max-width: 85rem; /* Keeps card width comfortable and readable */
-  margin: 0 auto;
-   margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Uniform, clean spacing between profiles */
+    width: 100%;
+    max-width: 1100px; /* Constrains cards so they never float off screen */
+    margin: 50px auto 0 auto;
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
-   PARTNER PROFILE CARD SYSTEM (image_429f23.png Pattern)
+   PARTNER PROFILE CARD SYSTEM
    ========================================================================== */
-
 .partner-display-card {
-  background: #FFFFFF;
-  border-radius: 2.4rem;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background: #ffffff;
+    border-radius: 12px; /* Sleek corporate corners */
+    border: 1px solid #e2e8f0; /* Crisp thin border lines */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Default stack for mobile screens */
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.01);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 1 !important; /* Forces broken scroll elements to show up immediately */
+    transform: none !important;
 }
 
-/* Elevates card smoothly on hover, drawing matching orange accent highlights */
+/* Minimalist Elevated Hover Interaction */
 .partner-display-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
-  border-color: #FF6A00;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+    border-color: #cbd5e1;
 }
 
-/* Isolated Top Header Base */
+/* Top/Left Section holding Logo graphics */
 .partner-card-header {
-  width: 100%;
-  height: 20rem;
-  background-color: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem 2rem 2rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
-}
-
-.partner-logo-container {
-  max-width: 24rem;
-  max-height: 12rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.partner-logo-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Bottom Card Body Segment */
-.partner-card-body {
-  padding: 3rem; /* reduced padding for better horizontal alignment on wide screens */
-  display: flex;
-  flex-direction: column;
-}
-
-.partner-card-title {
-  font-family: var(--font-heading), serif;
-  font-size: 2.4rem;
-  color: #0F172A;
-  margin: 0 0 1.8rem 0;
-}
-
-.partner-card-text {
-  font-family: var(--font-body), sans-serif;
-  font-size: 1.55rem;
-  line-height: 1.75;
-  color: #475569;
-  margin: 0 0 3rem 0;
-}
-
-/* Inline Interaction Controls */
-.partner-card-action-row {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: auto;
-}
-
-.partner-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-family: var(--font-body), sans-serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #FF6A00;
-  text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.partner-action-btn:hover {
-  color: #CC5800;
-  transform: translateX(2px);
-}
-
-/* Responsive Configuration Adjustments */
-@media (max-width: 768px) {
-  .partner-card-body {
-    padding: 3.5rem 2.4rem;
-  }
-  .partner-card-title {
-    font-size: 2.1rem;
-  }
-  .partner-card-text {
-    font-size: 1.48rem;
-    line-height: 1.65;
-  }
-  .partner-card-header {
-    height: 16rem;
-    padding: 3rem 2rem 1.5rem 2rem;
-  }
-}
-
-/* Large-screen layout: switch to a two-column card so logos and content align consistently */
-@media (min-width: 992px) {
-  .partner-display-card {
-    flex-direction: row;
-    align-items: stretch;
-  }
-
-  /* Make header a left column */
-  .partner-card-header {
-    width: 36%;
-    min-width: 24rem;
-    height: auto;
-    padding: 2.5rem;
-    border-bottom: none;
-    border-right: 1px solid rgba(15, 23, 42, 0.04);
+    width: 100%;
+    height: 180px;
+    background-color: #f8fafc; /* Subtle grey contrast box just for the logo */
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    padding: 20px;
+    border-bottom: 1px solid #f1f5f9;
+    box-sizing: border-box;
+}
 
-  .partner-logo-container {
-    max-width: 18rem;
-    max-height: 12rem;
-  }
+.partner-logo-container {
+    width: 100%;
+    max-width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-  .partner-card-body {
-    width: 64%;
-    padding: 3.5rem 4rem;
+.partner-logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Keeps logo graphic from pulling out of shape */
+}
+
+/* Card Content / Text Block Area */
+.partner-card-body {
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+    text-align: left; /* Left align for readable corporate scanning flow */
+    box-sizing: border-box;
+    flex-grow: 1;
+}
 
-  /* Keep action row left aligned within the text column for consistent reading flow */
-  .partner-card-action-row {
+.partner-card-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 24px; /* Explicit pixel counts bypass font scaling glitches */
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.partner-card-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0 0 24px 0;
+}
+
+/* Action Links & Button Triggers */
+.partner-card-action-row {
+    display: flex;
     justify-content: flex-start;
-  }
+    margin-top: auto;
+}
+
+.partner-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a; /* Slate black link text color */
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.partner-action-btn:hover {
+    background-color: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   DESKTOP TWO-COLUMN CONVERSION
+   ========================================================================== */
+@media (min-width: 850px) {
+    .partner-display-card {
+        flex-direction: row; /* Horizontal alignment layout engine */
+        align-items: stretch;
+    }
+
+    .partner-card-header {
+        width: 30%; /* Left hand column allocation */
+        height: auto;
+        min-height: 200px;
+        border-bottom: none;
+        border-right: 1px solid #f1f5f9;
+    }
+
+    .partner-card-body {
+        width: 70%; /* Right hand text description column */
+        padding: 40px;
+    }
 }
