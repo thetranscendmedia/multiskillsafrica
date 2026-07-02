@@ -1,4 +1,4 @@
-.partners-list-section {
+ .partners-list-section {
   width: 100%;
   background-color: #F8FAFC; /* Light background contrast for the page stream */
   padding: 2rem;
@@ -65,7 +65,7 @@
 
 /* Bottom Card Body Segment */
 .partner-card-body {
-  padding: 4.5rem;
+  padding: 3rem; /* reduced padding for better horizontal alignment on wide screens */
   display: flex;
   flex-direction: column;
 }
@@ -124,5 +124,44 @@
   .partner-card-header {
     height: 16rem;
     padding: 3rem 2rem 1.5rem 2rem;
+  }
+}
+
+/* Large-screen layout: switch to a two-column card so logos and content align consistently */
+@media (min-width: 992px) {
+  .partner-display-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* Make header a left column */
+  .partner-card-header {
+    width: 36%;
+    min-width: 24rem;
+    height: auto;
+    padding: 2.5rem;
+    border-bottom: none;
+    border-right: 1px solid rgba(15, 23, 42, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .partner-logo-container {
+    max-width: 18rem;
+    max-height: 12rem;
+  }
+
+  .partner-card-body {
+    width: 64%;
+    padding: 3.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Keep action row left aligned within the text column for consistent reading flow */
+  .partner-card-action-row {
+    justify-content: flex-start;
   }
 }
