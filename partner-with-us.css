@@ -1,0 +1,240 @@
+/* ==========================================================================
+   PROFESSIONAL WHITE PARTNER HUB STYLES (partner-with-us.css)
+   ========================================================================== */
+
+/* Base Reset Overrides for Minimalist Aesthetics */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Page Outer Wrapper */
+.partners-page-wrapper {
+    background-color: #ffffff;
+    padding-bottom: 8rem;
+}
+
+/* Elegant, Airy White Hero Section */
+.page-hero {
+    padding: 8rem 2rem 5rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f1f5f9; /* Whispy thin divider border */
+}
+
+.page-main-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 3.25rem;
+    font-weight: 500; /* Lighter weight for premium editorial appearance */
+    color: #0f172a; /* Slate Black */
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+    font-size: 1.15rem;
+    color: #475569; /* Muted corporate slate */
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+/* Mid Page Section Header Layout */
+.section-layout-section {
+    padding: 6rem 2rem 2rem;
+    background-color: #ffffff;
+}
+
+.section-inner-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.partner-prompt-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #0f172a;
+    margin: 0 0 1rem;
+}
+
+.section-lead-paragraph {
+    font-size: 1.05rem;
+    color: #64748b;
+    max-width: 620px;
+    margin: 0 auto 5rem;
+    line-height: 1.7;
+}
+
+/* Two-Column Grid Architecture */
+.partner-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem; /* Wide spaces feel more luxurious */
+}
+
+/* Premium White Interaction Cards */
+.partner-option-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0; /* Ultra crisp structure */
+    border-radius: 12px; /* Professional slight radius instead of bubbly circles */
+    padding: 4.5rem 3.5rem;
+    text-align: left; /* Left alignment looks cleaner and more corporate */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01); /* Barely detectable drop shadow */
+    
+    /* Native Hardware Accelerated Transition Matrix */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease;
+    will-change: transform, box-shadow;
+}
+
+/* Micro-Interaction States for Crisp White Cards */
+.partner-option-card:hover {
+    transform: translateY(-6px);
+    border-color: #cbd5e1;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.04); /* Soft premium ambient shadow */
+}
+
+/* Minimalist Structural Icon Containers */
+.option-icon-container {
+    background-color: #f8fafc; /* Crisp cool gray fill */
+    color: #334155;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px; /* Square with soft corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    border: 1px solid #f1f5f9;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Pure Accent Color Switch on Hover */
+.partner-option-card:hover .option-icon-container {
+    background-color: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+}
+
+/* Typography Inside the Cards */
+.option-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0f172a;
+    margin: 0 0 1rem;
+}
+
+.option-description {
+    font-size: 0.975rem;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0 0 3.5rem;
+    flex-grow: 1;
+}
+
+/* Sophisticated Outlined Text Action Buttons */
+.partner-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; /* Arrow stays cleanly balanced on the right edge */
+    background-color: #ffffff;
+    color: #0f172a;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #cbd5e1; /* Elegant outline look instead of heavy block colors */
+    border-radius: 6px;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Subtle inversion on button activation */
+.partner-action-btn:hover {
+    background-color: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+}
+
+.partner-action-btn svg {
+    stroke: currentcolor; /* Matches button text color automatically */
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-action-btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL CONFIGURATION PACK
+   ========================================================================== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.partner-options-grid .partner-option-card:nth-child(1) {
+    transition-delay: 0.05s;
+}
+.partner-options-grid .partner-option-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT RESPONSIVENESS MATRICES
+   ========================================================================== */
+@media (max-width: 960px) {
+    .partner-options-grid {
+        gap: 2rem;
+    }
+    .partner-option-card {
+        padding: 3.5rem 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-main-title {
+        font-size: 2.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .section-layout-section {
+        padding: 4rem 1.25rem 2rem;
+    }
+
+    .section-lead-paragraph {
+        margin-bottom: 3rem;
+    }
+
+    .partner-options-grid {
+        grid-template-columns: 1fr; /* Snap to a neat vertical column setup on standard phone viewports */
+        gap: 2rem;
+    }
+    
+    .partner-option-card {
+        padding: 3rem 2rem;
+    }
+}
