@@ -15,6 +15,7 @@
 
 .page-subtitle {
     letter-spacing: 0.07rem;
+    font-size: 1.8rem;
 }
 
 .section-inner-container {
@@ -24,14 +25,14 @@
 
 .partner-prompt-heading {
     font-family: 'Lora', Georgia, serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 500;
     color: #0f172a;
     margin: 0 0 1rem;
 }
 
 .section-lead-paragraph {
-    font-size: 1.05rem;
+    font-size: 1.8rem;
     color: #64748b;
     max-width: 620px;
     margin: 0 auto 5rem;
@@ -97,14 +98,14 @@
 /* Typography Inside the Cards */
 .option-title {
     font-family: 'Lora', Georgia, serif;
-    font-size: 1.5rem;
+    font-size: 2.3rem;
     font-weight: 500;
     color: #0f172a;
     margin: 0 0 1rem;
 }
 
 .option-description {
-    font-size: 0.975rem;
+    font-size: 1.5rem;
     color: #475569;
     line-height: 1.7;
     margin: 0 0 3.5rem;
@@ -119,7 +120,7 @@
     background-color: #ffffff;
     color: #0f172a;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     padding: 1rem 1.5rem;
     border: 1px solid #cbd5e1; /* Elegant outline look instead of heavy block colors */
     border-radius: 6px;
