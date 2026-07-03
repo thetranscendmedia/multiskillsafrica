@@ -661,3 +661,9 @@
   90%  { transform: rotate(-0.5deg); } /* Settle left */
   100% { transform: rotate(0deg); }    /* Rest position */
 }
+
+.cta-link-wrap {
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+}

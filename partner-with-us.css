@@ -2,51 +2,19 @@
    PROFESSIONAL WHITE PARTNER HUB STYLES (partner-with-us.css)
    ========================================================================== */
 
-/* Base Reset Overrides for Minimalist Aesthetics */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Page Outer Wrapper */
-.partners-page-wrapper {
-    background-color: #ffffff;
-    padding-bottom: 8rem;
-}
-
-/* Elegant, Airy White Hero Section */
 .page-hero {
-    padding: 8rem 2rem 5rem;
-    text-align: center;
-    background-color: #ffffff;
-    border-bottom: 1px solid #f1f5f9; /* Whispy thin divider border */
+  background-image: linear-gradient(rgba(19, 32, 51, 0.6), rgba(26, 43, 68, 0.6)),
+   url(/IMAGES/partner-with-us-image.jpg);
+  background-position: center center;
+  background-size: cover;
 }
 
-.page-main-title {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 3.25rem;
-    font-weight: 500; /* Lighter weight for premium editorial appearance */
-    color: #0f172a; /* Slate Black */
-    margin: 0 0 1.5rem;
-    letter-spacing: -0.02em;
+.page-main-title, .page-subtitle {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .page-subtitle {
-    font-size: 1.15rem;
-    color: #475569; /* Muted corporate slate */
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.65;
-    font-weight: 400;
-}
-
-/* Mid Page Section Header Layout */
-.section-layout-section {
-    padding: 6rem 2rem 2rem;
-    background-color: #ffffff;
+    letter-spacing: 0.07rem;
 }
 
 .section-inner-container {
