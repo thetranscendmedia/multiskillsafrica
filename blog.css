@@ -1,181 +1,232 @@
-/* Blog Section Base Layout */
-.blog-section {
-    padding: 90px 20px;
-    background-color: #f8fafc;
-    overflow: hidden;
+/* ==========================================================================
+   PROFESSIONAL BRAND ENHANCEMENTS & ANIMATION LAYERS
+   ========================================================================== */
+
+/* Subtle Fade-in on load */
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.blog-container {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
-/* Header Entrance Slide Down Animation */
-.blog-header {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 60px auto;
-    animation: slideDownFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
+/* Section Tagline Layout with Looping Status Light */
 .section-tagline {
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #2563eb; /* Vivid Modern Blue */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2563eb; /* Primary Accent Blue */
+    background: rgba(37, 99, 235, 0.08);
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2563eb;
+    border-radius: 50%;
     display: inline-block;
-    margin-bottom: 12px;
+    animation: statusPulse 2s infinite ease-in-out;
 }
 
-.blog-header h2 {
-    font-size: 2.5rem;
-    color: #0f172a;
-    margin: 0 0 16px 0;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+/* Elegant Center Divider Line */
+.header-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #f97316); /* MultiSkills Brand Blend */
+    margin: 16px auto 24px auto;
+    border-radius: 2px;
 }
 
-.blog-header p {
-    color: #475569;
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-
-/* Three-column Responsive Layout Grid */
+/* Dynamic Card Elevations & Hover States */
 .log-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
+    gap: 32px;
+    margin-top: 40px;
 }
 
-/* Classy Cards with Catchy Pop-up Scale Entrance Animation */
 .log-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
-    padding: 35px;
-    display: flex;
-    flex-direction: column;
+    padding: 32px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
-    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 2px 4px -2px rgba(15, 23, 42, 0.02);
-    
-    /* Entrance Animation Framework */
-    opacity: 0;
-    animation: popUpScale 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    
-    /* Interactive States Framework */
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-/* Hover Dynamics - Card Scales Up smoothly and casts a soft depth shadow */
+/* The Secret Glow Effect: Subtle border accent on hover */
+.log-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #f97316);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
 .log-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: #cbd5e1;
-    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08), 0 10px 20px -5px rgba(15, 23, 42, 0.04);
+    transform: translateY(-6px);
+    border-color: transparent;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.card-meta {
-    margin-bottom: 16px;
+.log-card:hover::before {
+    transform: scaleX(1);
 }
 
-.card-date {
-    font-size: 0.85rem;
-    color: #64748b;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
+/* Typography Enhancements inside feed */
 .card-title {
-    font-size: 1.4rem;
-    color: #0f172a;
-    margin: 0 0 14px 0;
-    font-weight: 700;
+    font-size: 1.35rem;
+    color: #1e293b;
+    margin: 12px 0;
     line-height: 1.4;
     transition: color 0.3s ease;
 }
 
-/* Card title flashes corporate blue when hovered anywhere on card */
 .log-card:hover .card-title {
     color: #2563eb;
 }
 
-.card-snippet {
-    color: #334155;
-    font-size: 0.98rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    flex-grow: 1;
-}
-
+/* Link Arrow Slide Interaction */
 .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-weight: 600;
     color: #2563eb;
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
 }
 
 .card-link .arrow {
-    margin-left: 6px;
-    font-size: 1.1rem;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.3s ease;
 }
 
-/* Interactive link indicator spring transition */
 .log-card:hover .card-link .arrow {
     transform: translateX(6px);
 }
 
-/* Loading indicators */
-.log-loading {
+/* Modern Newsletter Breakout Section Styling */
+.newsletter-strip {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 64px 24px;
     text-align: center;
-    grid-column: 1 / -1;
-    padding: 60px 0;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.newsletter-content p {
+    color: #94a3b8;
+    margin-bottom: 24px;
+}
+
+.action-form {
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: focus-within 0.3s ease;
+}
+
+.action-form:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.action-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.action-form input::placeholder {
     color: #64748b;
 }
 
-.spinner {
-    width: 44px;
-    height: 44px;
-    border: 4px solid #e2e8f0;
-    border-top: 4px solid #2563eb;
-    border-radius: 50%;
-    margin: 0 auto 20px auto;
-    animation: rotateLoop 0.8s linear infinite;
+.action-form button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-/* --- KEYFRAMES CORE ENGINE --- */
+.action-form button:hover {
+    background: #1d4ed8;
+}
 
-/* Smooth Slide and Drop down for Header Elements */
-@keyframes slideDownFade {
+/* Mobile responsive fixes for input bar */
+@media (max-width: 580px) {
+    .action-form {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+    .action-form input {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        margin-bottom: 12px;
+    }
+}
+
+/* ==========================================================================
+   LOOPING MOTION KEYFRAMES
+   ========================================================================== */
+@keyframes statusPulse {
     0% {
-        opacity: 0;
-        transform: translateY(-30px);
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
     }
     100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Catchy bounce-up elastic scaling effect for loading entry logs */
-@keyframes popUpScale {
-    0% {
-        opacity: 0;
-        transform: translateY(40px) scale(0.92);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Infinite Loading loop spin */
-@keyframes rotateLoop {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
