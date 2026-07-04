@@ -3,230 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Coming Soon — MultiSkillsAfrica</title>
+    <title>Latest Updates | MultiSkillsAfrica</title>
+    <style>
+        /* Modern, Clean Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9fb;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    <link rel="stylesheet" href="generalstyles.css">
-    
-    <link rel="stylesheet" href="blog.css">
-    <link rel="stylesheet" href="generalstyles-media-query.css">
-    <link href="/IMAGES/multiskillsafrica-fav.png" rel="icon">
+        /* Classy Blog Section Foundations */
+        .blog-section {
+            padding: 80px 20px;
+            background-color: #f9f9fb;
+        }
+        .blog-container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        .blog-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+        .section-tagline {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #0066cc; /* Classy Blue Branding */
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .blog-header h2 {
+            font-size: 2.2rem;
+            color: #111112;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+        }
+        .blog-header p {
+            color: #666670;
+            line-height: 1.6;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+        /* Responsive Layout Grid */
+        .log-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Premium Minimalist Post Cards */
+        .log-card {
+            background: #ffffff;
+            border: 1px solid #eef0f4;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .log-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        .card-meta {
+            margin-bottom: 15px;
+        }
+        .card-date {
+            font-size: 0.85rem;
+            color: #8a8a93;
+            font-weight: 500;
+        }
+        .card-title {
+            font-size: 1.35rem;
+            color: #1a1a1e;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .card-snippet {
+            color: #4b4b52;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        .card-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+        .card-link .arrow {
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+        .card-link:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* Loading Spinner Animation */
+        .log-loading {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 40px 0;
+            color: #8a8a93;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0066cc;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
 
-       <!-- 1. NAVIGATION HEADER (The Welcome Gate) -->
-<header id="main-header" class="site-header">
-    <div class="header-container">
-
-        <!-- Website Brand/Logo Area -->
-        <div class="brand">
-            <a href="index.html">
-                <img src="/IMAGES/multiskillsafrica-logo.png" alt="multilskillsafrica-logo" class="logo">
-            </a>
-        </div>
-
-        <!-- Desktop Navigation Area -->
-        <nav id="main-nav" class="navigation" aria-label="Main Navigation">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about-us.html" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="ourprograms.html" class="nav-link">Our Programs</a></li>
-                <!-- <li class="nav-item"><a href="impact.html" class="nav-link">Our Impact</a></li>
-                <li class="nav-item"><a href="trainers.html" class="nav-link">Trainers Module</a></li> -->
-                <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
-                <li class="nav-item"><a href="partner-with-us.html" class="nav-link">Partner with Us</a></li>
-                <!-- <li class="nav-item"><a href="partner.html" class="nav-link">Official Partners</a></li> -->
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-            </ul>
-        </nav>
-
-        <!-- Desktop Action Button Section -->
-        <div class="header-actions active">
-            <a href="support.html" class="nav-cta">Support MSTP</a>
-        </div>
-
-        <!-- MOBILE NAVIGATION TRACK ENGINE -->   
-        <nav id="mobile-navbar" aria-label="Mobile Navigation">
-            <!-- Toggle Button (Always visible on mobile viewports) -->
-            <button id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="nav-links">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
-            </button>
-
-            <!-- Navigation Links Container (The Sliding Drawer) -->
-            <div id="nav-links">
-                <!-- Close Button inside the sliding drawer -->
-                <button id="menu-close" aria-label="Close Navigation Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                </button>
-
-                <a href="index.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a>
-                <a href="about-us.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>About</a>
-                <a href="ourprograms.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Our Programs</a>
-                
-                <a href="impact.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Our Impact</a>
-                <a href="trainers.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M9 21h6"/><path d="M8 11l3-3 3 3"/></svg>Trainers Module</a>
-                <a href="team.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round"><path d="M18 21a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/></svg>Our Team</a>
-                <a href="blog.html" class="mobile-nav-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>News & Blog</a>
-                <a href="partner.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4l-11.6-11.6a2.1 2.1 0 0 0-3 3l3.8 3.8"/><path d="m14 14 2.5 2.5a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4L11 2"/><path d="M17 11V7a1 1 0 0 0-1-1h-4"/><path d="M10 11H6a1 1 0 0 1-1-1V6"/></svg>Official Partners</a>
-                <a href="partner-with-us.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>Partner With Us</a>                                
-                <a href="contact.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Contact Us</a>
-
-                <a href="support.html" class="mobile-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>Support MSTP</a>
-            </div>
-        </nav>
-
-    </div>
-</header>
-
-
-
-
-<div class="workspace-wrapper">
-
-        <!-- Catchy Modern Title -->
-        <h1 class="page-headline">Fresh Content is Rendering</h1>
-
-        <!-- THE DIALOGUE DISPLAY COMPONENT -->
-        <div class="dialogue-window">
-            <div class="window-top-bar">
-                <div class="window-dot"></div>
-                <div class="window-dot"></div>
-                <div class="window-dot"></div>
-                <span class="window-title">Status: Building Modules</span>
-                <div class="window-dot active-status"></div>
-            </div>
-
-            <div class="dialogue-stream">
-                
-                <!-- Mock Bubble 1 (User Query) -->
-                <div class="msg-bubble user-query">
-                    Hey! Can I access the official <strong>Blog Session</strong> and check out the latest <strong>News Section</strong> here?
-                </div>
-
-                <!-- Mock Bubble 2 (System Affirmation) -->
-                <div class="msg-bubble system-reply">
-                    Systems update: Both modules are currently <strong>Coming Soon!</strong> We are putting together something amazing.
-                </div>
-
-                <!-- Dynamic Micro-Interaction Element -->
-                <div class="loading-ticker">
-                    <span>Finalizing builds</span>
-                    <div class="ticker-dot"></div>
-                    <div class="ticker-dot"></div>
-                    <div class="ticker-dot"></div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- TRANSACTION CONSOLE (Newsletter Submission Box) -->
-        <div class="subscribe-console">
-            <h3>Subscribe to Our Newsletter</h3>
-            <p>Be the very first to get notified structural updates and live launch drops.</p>
+    <!-- Main Section -->
+    <section class="blog-section" id="updates-log">
+        <div class="blog-container">
             
-            <div class="action-flex-row">
-                <div class="email-display-field" title="Click to highlight and copy email">
-                    multiskillafrica@gmail.com
+            <div class="blog-header">
+                <span class="section-tagline">STAY UPDATED</span>
+                <h2>Project Logs & Announcements</h2>
+                <p>Follow the latest milestones, stories, and training updates directly from the MultiSkillsAfrica team.</p>
+            </div>
+
+            <!-- Dynamic Feed Target -->
+            <div id="mstp-log-feed" class="log-grid">
+                <div class="log-loading">
+                    <div class="spinner"></div>
+                    <p>Fetching latest updates from live feed...</p>
                 </div>
-                <a href="mailto:multiskillafrica@gmail.com?subject=Newsletter%20Subscription" class="cta-submit-btn">
-                    <span>Subscribe Now</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                </a>
             </div>
+
         </div>
+    </section>
 
-    </div>
+    <!-- Background Script Layout -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const bloggerUrl = "https://multiskillafrica.blogspot.com"; 
 
+        // Beautiful placeholder entries so the page looks spectacular even before they post anything
+        const fallbackTemplates = `
+            <article class="log-card">
+                <div class="card-meta"><span class="card-date">July 2026</span></div>
+                <h3 class="card-title">Welcome to the MultiSkillsAfrica Log</h3>
+                <p class="card-snippet">This section will host live field reports, newly launched educational modules, and program announcements managed directly by our team.</p>
+                <a href="${bloggerUrl}" target="_blank" class="card-link">Visit Dashboard <span class="arrow">→</span></a>
+            </article>
+            <article class="log-card">
+                <div class="card-meta"><span class="card-date">July 2026</span></div>
+                <h3 class="card-title">Vocational Module Updates</h3>
+                <p class="card-snippet">Keep track of updates regarding our core pillars, training frameworks, and community development pilots across tracking regions.</p>
+                <a href="${bloggerUrl}" target="_blank" class="card-link">Visit Dashboard <span class="arrow">→</span></a>
+            </article>
+            <article class="log-card">
+                <div class="card-meta"><span class="card-date">July 2026</span></div>
+                <h3 class="card-title">Empowering Growth through Tech</h3>
+                <p class="card-snippet">Read summaries of recent hackathons, technical tools acquired by training hubs, and participant achievement tracking statistics.</p>
+                <a href="${bloggerUrl}" target="_blank" class="card-link">Visit Dashboard <span class="arrow">→</span></a>
+            </article>
+        `;
 
-    
-        <!-- 5. FOOTER SECTION (Logo, Columns, Newsletter, Socials, Legal) -->
-<footer class="site-footer">
-    <!-- Main informational and interactive column grids -->
-    <div class="footer-columns">
-
-        <!-- Footer Column 1 — Logo + Tagline -->
-        <div class="footer-col brand-info-col">
-            <div class="brand-logo-wrap">
-                <a href="/" aria-label="MSTP Home">
-                    <!-- MSTP inline SVG logo platform hook -->
-                    <img src="/IMAGES/multiskillsafrica-logo.png" alt="multiskillsafricalogo Logo" class="logo">
-                </a>
-            </div>
-            <p class="footer-tagline">Building Africa's Future — One Skill at a Time.</p>
-            <p class="footer-subline">Multi-Skill Teenpreneurship Program | multiskillsafrica.org</p>
-        </div>
-
-        <!-- Footer Column 2 — Take Action -->
-        <div class="footer-col">
-            <h2 class="footer-heading">Take Action</h2>
-            <ul class="footer-links-list">
-                <li><a href="support.html" class="footer-link">Support MSTP &rarr;</a></li>
-                <li><a href="support.html" class="footer-link">Donate Now &rarr;</a></li>
-                <li><a href="partner-with-us.html" class="footer-link">Partner With Us &rarr;</a></li>
-            </ul>
-        </div>
-
-        <!-- Footer Column 3 — About Us -->
-        <div class="footer-col">
-            <h2 class="footer-heading">About Us</h2>
-            <ul class="footer-links-list">
-                <li><a href="about-us.html" class="footer-link">Our Story &rarr;</a></li>
-                <li><a href="our-programs.html" class="footer-link">Our Programs &rarr;</a></li>
-                <li><a href="team.html" class="footer-link">Our Team &rarr;</a></li>
-                <li><a href="partner.html" class="footer-link">Our Partners &rarr;</a></li>
-                <li><a href="contact.html" class="footer-link">Contact &rarr;</a></li>
-            </ul>
-        </div>
-
-        <!-- Footer Column 4 — Learn More -->
-        <div class="footer-col">
-            <h2 class="footer-heading">Learn More</h2>
-            <ul class="footer-links-list">
-                <li><a href="blog.html" class="footer-link">News & Blog &rarr;</a></li>
-                <li><a href="impact.html" class="footer-link">Impact &rarr;</a></li>
-                <li><a href="financials.html" class="footer-link">Financials &rarr;</a></li>
-                <li><a href="/media" class="footer-link">Media Kit &rarr;</a></li>
-            </ul>
-        </div>
-
-        <!-- Footer — Newsletter Signup -->
-        <div class="footer-col newsletter-col">
-            
-            <!-- Footer — Social Icons Block -->
-            <div class="footer-social-wrap">
-                <a href="https://www.facebook.com/profile.php?id=61550199511296" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </a>
-                <a href="https://x.com/Multiskill142" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/mstpafrica/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Footer — Legal Row and Credits -->
-    <div class="footer-bottom">
-        <div class="footer-legal-left">
-            <p class="copyright">&copy; 2026 Multi-Skill Teenpreneurship Program (MSTP). All rights reserved.</p>
-            <p class="copyright">Developed by The Transcends.</p>
-        </div>
-        <div class="footer-legal-right">
-            <ul class="legal-links-list">
-                <li><a href="/privacy" class="legal-link">Privacy Policy</a></li>
-                <li><a href="/terms" class="legal-link">Terms of Use</a></li>
-                <li><a href="contact.html" class="legal-link">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-    <script src="general-script.js"></script>
+        fetch(`${bloggerUrl}/feeds/posts/default?alt=json`)
+          .then(response => {
+              if (!response.ok) throw new Error('No entries found yet');
+              return response.json();
+          })
+          .then(data => {
+              const entries = data.feed.entry || [];
+              const feedContainer = document.getElementById("mstp-log-feed");
+              let htmlContent = "";
+              
+              // If the feed is technically active but contains zero published posts
+              if(entries.length === 0) {
+                  feedContainer.innerHTML = fallbackTemplates;
+                  return;
+              }
+              
+              // Loop through live posts once the team begins creating them
+              entries.slice(0, 3).forEach(entry => {
+                  const title = entry.title.$t;
+                  let rawContent = entry.content.$t;
+                  
+                  // Strip HTML elements out to construct clean text previews
+                  let cleanText = rawContent.replace(/<img[^>]*>/g, "").replace(/<[^>]*>/g, ""); 
+                  let snippet = cleanText.substring(0, 140) + (cleanText.length > 140 ? "..." : "");
+                  
+                  const published = new Date(entry.published.$t).toLocaleDateString('en-US', {
+                      month: 'short', day: 'numeric', year: 'numeric'
+                  });
+                  
+                  const postLink = entry.link.find(l => l.rel === 'alternate').href;
+                  
+                  htmlContent += `
+                      <article class="log-card">
+                          <div class="card-meta"><span class="card-date">${published}</span></div>
+                          <h3 class="card-title">${title}</h3>
+                          <p class="card-snippet">${snippet}</p>
+                          <a href="${postLink}" target="_blank" class="card-link">Read Full Post <span class="arrow">→</span></a>
+                      </article>
+                  `;
+              });
+              
+              feedContainer.innerHTML = htmlContent;
+          })
+          .catch(error => {
+              // If the blog returns an error or is empty, gracefully show the layout placeholders
+              document.getElementById("mstp-log-feed").innerHTML = fallbackTemplates;
+          });
+    });
+    </script>
 </body>
 </html>
