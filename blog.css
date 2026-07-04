@@ -1,284 +1,181 @@
-:root {
-            --bg-main: #ffffff;
-            --primary-text: #0f172a;
-            --muted-text: #64748b;
-            --accent-blue: #2563eb;
-            --bg-panel: #f8fafc;
-            --border-line: #e2e8f0;
-            
-            /* Custom chat bubble shades */
-            --bubble-user: #f1f5f9;
-            --bubble-system: #eff6ff;
-        }
+/* Blog Section Base Layout */
+.blog-section {
+    padding: 90px 20px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--primary-text);
-            /* min-height: 100vh; */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow-x: hidden;
-        }
+.blog-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
 
-        /* Ambient soft geometric backdrop accent */
-        /* body::before {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, rgba(255,255,255,0) 70%);
-            top: -10%;
-            z-index: 1;
-        } */
+/* Header Entrance Slide Down Animation */
+.blog-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px auto;
+    animation: slideDownFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
-        /* 1. STRUCTURAL CSS ANIMATIONS */
-        @keyframes windowEntrance {
-            0% { opacity: 0; transform: translateY(24px) scale(0.98); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
+.section-tagline {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2563eb; /* Vivid Modern Blue */
+    display: inline-block;
+    margin-bottom: 12px;
+}
 
-        @keyframes bubblePop {
-            0% { opacity: 0; transform: scale(0.95) translateY(10px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
+.blog-header h2 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin: 0 0 16px 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
 
-        @keyframes pulseDot {
-            0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
+.blog-header p {
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
 
-        /* Outer Frame Layout */
-        .workspace-wrapper {
-            position: relative;
-            z-index: 10;
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-            animation: windowEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            padding: 5rem 2rem;
-        }
+/* Three-column Responsive Layout Grid */
+.log-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
 
-        /* Catchy Main Heading */
-        .page-headline {
-            font-family: 'Lora', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            line-height: 1.25;
-            margin-bottom: 2rem;
-        }
+/* Classy Cards with Catchy Pop-up Scale Entrance Animation */
+.log-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 2px 4px -2px rgba(15, 23, 42, 0.02);
+    
+    /* Entrance Animation Framework */
+    opacity: 0;
+    animation: popUpScale 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    
+    /* Interactive States Framework */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        /* 2. THE DIALOGUE CONTAINER BOX */
-        .dialogue-window {
-            background: #ffffff;
-            border: 1px solid var(--border-line);
-            border-radius: 24px;
-            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
-            overflow: hidden;
-            text-align: left;
-            margin-bottom: 2rem;
-        }
+/* Hover Dynamics - Card Scales Up smoothly and casts a soft depth shadow */
+.log-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #cbd5e1;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08), 0 10px 20px -5px rgba(15, 23, 42, 0.04);
+}
 
-        /* Window Header Bar mimicking professional app interfaces */
-        .window-top-bar {
-            background: var(--bg-panel);
-            border-bottom: 1px solid var(--border-line);
-            padding: 1rem 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+.card-meta {
+    margin-bottom: 16px;
+}
 
-        .window-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #cbd5e1;
-        }
-        .window-dot.active-status {
-            background: #4ade80; /* Soft green live indicator */
-            margin-left: auto;
-            width: 8px;
-            height: 8px;
-        }
+.card-date {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-        .window-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-left: 0.25rem;
-        }
+.card-title {
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin: 0 0 14px 0;
+    font-weight: 700;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
 
-        /* Chat Streams Content Viewport */
-        .dialogue-stream {
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
+/* Card title flashes corporate blue when hovered anywhere on card */
+.log-card:hover .card-title {
+    color: #2563eb;
+}
 
-        /* Indivdual Dialog Bubbles */
-        .msg-bubble {
-            max-width: 45%;
-            padding: 1rem 1.25rem;
-            border-radius: 16px;
-            font-size: 1.5rem;
-            line-height: 1.5;
-            opacity: 0;
-            animation: bubblePop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
+.card-snippet {
+    color: #334155;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
 
-        /* User Dialog Bubble (Left Side) */
-        .msg-bubble.user-query {
-            background: var(--bubble-user);
-            color: var(--primary-text);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-            animation-delay: 0.2s;
-        }
+.card-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+}
 
-        /* System Action Response Bubble (Right Side) */
-        .msg-bubble.system-reply {
-            background: var(--bubble-system);
-            color: var(--accent-blue);
-            font-weight: 500;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            animation-delay: 0.9s;
-        }
+.card-link .arrow {
+    margin-left: 6px;
+    font-size: 1.1rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        /* Catchy Animated Typing Status Indicator */
-        .loading-ticker {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            background: var(--bg-panel);
-            padding: 0.75rem 1.25rem;
-            border-radius: 100px;
-            width: max-content;
-            align-self: flex-end;
-            opacity: 0;
-            animation: bubblePop 0.4s ease forwards;
-            animation-delay: 1.6s;
-        }
+/* Interactive link indicator spring transition */
+.log-card:hover .card-link .arrow {
+    transform: translateX(6px);
+}
 
-        .loading-ticker span {
-            font-size: 1.5rem;
-            color: var(--muted-text);
-            font-weight: 500;
-            margin-right: 0.25rem;
-        }
+/* Loading indicators */
+.log-loading {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 60px 0;
+    color: #64748b;
+}
 
-        .ticker-dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent-blue);
-            border-radius: 50%;
-            display: inline-block;
-            animation: pulseDot 1.4s infinite ease-in-out both;
-        }
-        .ticker-dot:nth-child(2) { animation-delay: 0.2s; }
-        .ticker-dot:nth-child(3) { animation-delay: 0.4s; }
+.spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #2563eb;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    animation: rotateLoop 0.8s linear infinite;
+}
 
+/* --- KEYFRAMES CORE ENGINE --- */
 
-        /* 3. NEWSLETTER UTILITY CONSOLE */
-        .subscribe-console {
-            background: var(--bg-panel);
-            border: 1px solid var(--border-line);
-            padding: 1.75rem;
-            border-radius: 20px;
-            text-align: center;
-            opacity: 0;
-            animation: bubblePop 0.6s ease forwards;
-            animation-delay: 1.8s;
-        }
+/* Smooth Slide and Drop down for Header Elements */
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .subscribe-console h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-        }
+/* Catchy bounce-up elastic scaling effect for loading entry logs */
+@keyframes popUpScale {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
-        .subscribe-console p {
-            font-size: 1.5rem;
-            color: var(--muted-text);
-            margin-bottom: 1.25rem;
-        }
-
-        .action-flex-row {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        @media (min-width: 480px) {
-            .action-flex-row {
-                flex-direction: row;
-            }
-        }
-
-        .email-display-field {
-            flex: 1;
-            background: #ffffff;
-            border: 1px solid var(--border-line);
-            padding: 0.9rem 1.25rem;
-            border-radius: 12px;
-            color: var(--primary-text);
-            font-family: 'Inter', monospace;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            user-select: all;
-            transition: all 0.2s ease;
-        }
-
-        .email-display-field:hover {
-            border-color: #cbd5e1;
-        }
-
-        .cta-submit-btn {
-            background: var(--accent-blue);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 1.5rem;
-            padding: 0.9rem 1.5rem;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .cta-submit-btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
-        }
-
-        .cta-submit-btn svg {
-            transition: transform 0.2s ease;
-        }
-
-        .cta-submit-btn:hover svg {
-            transform: translate(2px, -2px);
-        }
-
-
-
-        @media (max-width: 600px) {
-            .page-headline { font-size: 1.9rem; }
-            .dialogue-stream { padding: 1.25rem 1rem; }
-            .msg-bubble { max-width: 90%; font-size: 0.9rem; }
-        }
+/* Infinite Loading loop spin */
+@keyframes rotateLoop {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
