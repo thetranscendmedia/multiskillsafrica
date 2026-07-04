@@ -4,134 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest Updates | MultiSkillsAfrica</title>
-    <style>
-        /* Modern, Clean Global Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9fb;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        /* Classy Blog Section Foundations */
-        .blog-section {
-            padding: 80px 20px;
-            background-color: #f9f9fb;
-        }
-        .blog-container {
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-        .blog-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 50px auto;
-        }
-        .section-tagline {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #0066cc; /* Classy Blue Branding */
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .blog-header h2 {
-            font-size: 2.2rem;
-            color: #111112;
-            margin: 0 0 15px 0;
-            font-weight: 800;
-        }
-        .blog-header p {
-            color: #666670;
-            line-height: 1.6;
-        }
-
-        /* Responsive Layout Grid */
-        .log-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        /* Premium Minimalist Post Cards */
-        .log-card {
-            background: #ffffff;
-            border: 1px solid #eef0f4;
-            border-radius: 12px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .log-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-        }
-        .card-meta {
-            margin-bottom: 15px;
-        }
-        .card-date {
-            font-size: 0.85rem;
-            color: #8a8a93;
-            font-weight: 500;
-        }
-        .card-title {
-            font-size: 1.35rem;
-            color: #1a1a1e;
-            margin: 0 0 12px 0;
-            font-weight: 700;
-            line-height: 1.4;
-        }
-        .card-snippet {
-            color: #4b4b52;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-        .card-link {
-            color: #0066cc;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.2s;
-        }
-        .card-link .arrow {
-            margin-left: 5px;
-            transition: transform 0.2s;
-        }
-        .card-link:hover .arrow {
-            transform: translateX(4px);
-        }
-
-        /* Loading Spinner Animation */
-        .log-loading {
-            text-align: center;
-            grid-column: 1 / -1;
-            padding: 40px 0;
-            color: #8a8a93;
-        }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #0066cc;
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <!-- Linked CSS File -->
+    <link rel="stylesheet" href="blog.css">
 </head>
 <body>
 
-    <!-- Main Section -->
+    <!-- Dynamic Blog Section -->
     <section class="blog-section" id="updates-log">
         <div class="blog-container">
             
@@ -141,7 +19,7 @@
                 <p>Follow the latest milestones, stories, and training updates directly from the MultiSkillsAfrica team.</p>
             </div>
 
-            <!-- Dynamic Feed Target -->
+            <!-- The Grid Target for dynamic logs -->
             <div id="mstp-log-feed" class="log-grid">
                 <div class="log-loading">
                     <div class="spinner"></div>
@@ -152,26 +30,26 @@
         </div>
     </section>
 
-    <!-- Background Script Layout -->
+    <!-- Background Engine -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         const bloggerUrl = "https://multiskillafrica.blogspot.com"; 
 
-        // Beautiful placeholder entries so the page looks spectacular even before they post anything
+        // Premium fallbacks so the page is alive instantly while empty
         const fallbackTemplates = `
-            <article class="log-card">
+            <article class="log-card" style="animation-delay: 0.1s;">
                 <div class="card-meta"><span class="card-date">July 2026</span></div>
                 <h3 class="card-title">Welcome to the MultiSkillsAfrica Log</h3>
                 <p class="card-snippet">This section will host live field reports, newly launched educational modules, and program announcements managed directly by our team.</p>
                 <a href="${bloggerUrl}" target="_blank" class="card-link">Visit Dashboard <span class="arrow">→</span></a>
             </article>
-            <article class="log-card">
+            <article class="log-card" style="animation-delay: 0.2s;">
                 <div class="card-meta"><span class="card-date">July 2026</span></div>
                 <h3 class="card-title">Vocational Module Updates</h3>
                 <p class="card-snippet">Keep track of updates regarding our core pillars, training frameworks, and community development pilots across tracking regions.</p>
                 <a href="${bloggerUrl}" target="_blank" class="card-link">Visit Dashboard <span class="arrow">→</span></a>
             </article>
-            <article class="log-card">
+            <article class="log-card" style="animation-delay: 0.3s;">
                 <div class="card-meta"><span class="card-date">July 2026</span></div>
                 <h3 class="card-title">Empowering Growth through Tech</h3>
                 <p class="card-snippet">Read summaries of recent hackathons, technical tools acquired by training hubs, and participant achievement tracking statistics.</p>
@@ -189,18 +67,15 @@
               const feedContainer = document.getElementById("mstp-log-feed");
               let htmlContent = "";
               
-              // If the feed is technically active but contains zero published posts
               if(entries.length === 0) {
                   feedContainer.innerHTML = fallbackTemplates;
                   return;
               }
               
-              // Loop through live posts once the team begins creating them
-              entries.slice(0, 3).forEach(entry => {
+              entries.slice(0, 3).forEach((entry, index) => {
                   const title = entry.title.$t;
                   let rawContent = entry.content.$t;
                   
-                  // Strip HTML elements out to construct clean text previews
                   let cleanText = rawContent.replace(/<img[^>]*>/g, "").replace(/<[^>]*>/g, ""); 
                   let snippet = cleanText.substring(0, 140) + (cleanText.length > 140 ? "..." : "");
                   
@@ -210,8 +85,9 @@
                   
                   const postLink = entry.link.find(l => l.rel === 'alternate').href;
                   
+                  // Incremental animation-delay added per card via style attribute
                   htmlContent += `
-                      <article class="log-card">
+                      <article class="log-card" style="animation-delay: ${0.1 * (index + 1)}s;">
                           <div class="card-meta"><span class="card-date">${published}</span></div>
                           <h3 class="card-title">${title}</h3>
                           <p class="card-snippet">${snippet}</p>
@@ -223,7 +99,6 @@
               feedContainer.innerHTML = htmlContent;
           })
           .catch(error => {
-              // If the blog returns an error or is empty, gracefully show the layout placeholders
               document.getElementById("mstp-log-feed").innerHTML = fallbackTemplates;
           });
     });
