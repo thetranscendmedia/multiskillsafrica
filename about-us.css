@@ -16,33 +16,42 @@
 
 .story-layout-section {
   width: 100%;
-  max-width: 120rem;
+  /* max-width: 120rem; */
   margin: 0 auto;
   padding: 6rem 2rem;
   background-color: transparent;
 }
 
 .story-inner-container {
-  max-width: 85rem; /* Restricts reading length for a clean editorial feel */
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  flex-direction: row;
+  align-items: center; /* CHANGED: Vertically centers the text and image alongside each other */
+  justify-content: space-between; /* CHANGED: Spreads out text on the left, image on the right */
+  gap: 5rem; /* CHANGED: Generous breathing gutter between text and image */
+  width: 100%; /* CHANGED: Fits within standard section layouts smoothly */
+  max-width: 120rem; /* ADDED: Prevents elements from spreading too wide on massive screens */
+  margin: 0 auto; /* ADDED: Keeps the page content beautifully centered */
 }
+
+
 
 /* Section Main Subheading */
 .story-section-title {
   font-family: var(--font-heading), serif;
-  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--color-primary); /* Deep Navy */
   margin: 0;
   letter-spacing: -0.01rem;
+  margin-bottom: 4rem;
+  text-align: center;
 }
 
 /* Base Body Paragraph Styling */
 .story-content-flow {
   display: flex;
   flex-direction: column;
+  flex: 1.2; /* CHANGED: Tells flexbox to prioritize giving text slightly more proportional weight */
   gap: 2.2rem; /* Creates balanced vertical rhythm between content blocks */
 }
 
@@ -67,6 +76,17 @@
   color: var(--color-primary);
   font-size: 1.65rem;
   margin-top: 0.5rem;
+}
+
+/* CHANGED: Completely overhauled image ruleset to scale proportionally on desktop */
+.story-img {
+  flex: 1; /* Allows image to fluidly occupy its half of the row balance */
+  width: 100%;
+  max-width: 48rem; /* Keeps the frame contained so it does not get overwhelmingly massive */
+  height: auto;
+  max-height: 50rem;
+  object-fit: cover;
+  border-radius: 1.6rem; /* Matches premium layout framing system across the rest of the web app */
 }
 
 /* ==========================================================================
@@ -274,4 +294,26 @@
     height: auto;
     border-radius: 8px; /* Optional: adds smooth rounded corners to match modern design */
     object-fit: cover;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERY: BREAKPOINT AT VIEWPORT WIDTH BELOW 1200px
+   ========================================================================== */
+@media (max-width: 1000px) {
+  .story-inner-container {
+    flex-direction: column; /* Stack components vertically */
+    gap: 4.5rem;            /* Generous gutter room between stacked layers */
+  }
+
+  .story-content-flow {
+    order: 1;
+  }
+
+  .story-img {
+    order: 2;
+    width: 100%;
+    max-width: 65rem;
+    max-height: 42rem;
+  }
 }
